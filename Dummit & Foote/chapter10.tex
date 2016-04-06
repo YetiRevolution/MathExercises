@@ -1,0 +1,1512 @@
+\setcounter{chapter}{9}
+\begin{chapter}{Introduction to Module Theory}
+
+\begin{section}{Basic Definitions and Examples}
+In these exercises $R$ is a ring with 1 and $M$ is a left $R$-module.
+\begin{problem}\label{ex:10.1.1}
+Prove that $0m = 0$ and $(-1)m = -m$ for all $m\in M$. 
+\end{problem}
+\begin{solution}We have via straightforward application of the module axioms that \[
+0m = (0-0)m = 0m-0m = 0.
+\]
+Likewise, we can compute that \[
+(-1)m = -m+m+(-1)m =  -m + (1)m + (-1)m = -m +(1-1)m = -m-0m = -m.
+\]
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.2}
+Prove that $R^\times$ and $M$ satisfy the two axioms in Section 1.7 for a \emph{group action} of the multiplicative group $R^\times$ on the set $M$.
+\end{problem}
+\begin{solution}We know that $R^\times$ is a group, and by the module axioms we know $1\cdot m = m$ for all $m\in M$ and hence the identity acts on $M$ in accordance with a group action. We also have via the module axioms that $uv\cdot m = u\cdot(v\cdot m)$ for all $u,v\in R^\times$, and so the action of $R^\times$ satisfies both axioms of a group action.
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.3}
+Assume that $rm=0$ for some $r\in R$ and some $m\in M$ with $m\neq 0$. Prove that $r$ does not have a left inverse (i.e., there is no $s\in R$ such that $sr = 1$).
+\end{problem}
+\begin{solution}Suppose otherwise, so that there exists $s\in R$ so that $sr=1$. Then we have that \[
+m = (sr)m = s(rm) = s0 = 0
+\]
+a contradiction. 
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.4}
+Let $M$ be the module $R^n$ described in Example 3 and let $I_1, I_2,\ldots, I_n$ be left ideals of $R$. Prove that the following are submodules of $M$:\begin{enumerate}\item[(a)] $\{(x_1,x_2,\ldots,x_n)\mid x_i\in I_i\}$\item[(b)] $\{(x_1,x_2,\ldots,x_n)\mid x_i\in R \text{ and } x_1+x_2+\ldots +x_n = 0\}$.\end{enumerate}
+\end{problem}
+\begin{solution}
+(a)\\
+The set  is clearly nonempty since $(0,0,\ldots,0)$ is in it. The second condition of the submodule criterion is also satisfied since \begin{align*}
+(x_1,x_2,\ldots,x_n) + r(x_1',x_2',\ldots,x_n') = (x_1+rx_1',x_2+rx_2',\ldots, x_n+rx_n')
+\end{align*}
+for any $r\in R$ and $x_i+rx_i'\in I$ by virtue of $I$ being an ideal. Thus the set is a submodule.\\\\
+(b)\\
+As in (a) we notice that $(0,0,\ldots,0)$ is in the set, and so it is nonempty. Letting $x = (x_1,\ldots,x_n)$ and $y= (x_1',\ldots,x_n')$ be two elements of the set we have that $x+ry$ is in the set since \begin{align*}
+(x_1+rx_1')+(x_2+rx_2') + \cdots + (x_n+rx_n') &= (x_1+x_2+\cdots+x_n)+r(x_1'+x_2'+\cdots+x_n')\\
+& = 0+r0\\
+&=0.
+\end{align*}
+Thus the set satisfies the submodule criterion and is a submodule.
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.5}
+For any left ideal $I$ of $R$ define \[
+IM = \{\sum_{\text{finite}}a_im_i\mid a_i\in I, m_i\in M\}
+\]
+to be the collection of all finite sums of elements of the form $am$ where $a\in I$ and $m\in M$. Prove that $IM$ is a submodule of $M$. 
+\end{problem}
+\begin{solution}
+Note that $0_M \in IM$ since $0_R\in I$ and $0_M\in M$ so $0_M = 0_R\cdot 0_M \in IM$. Now let $x = \sum a_im_i$ and $y= \sum b_jm_j$ be two elements of $IM$. Then notice for any $r\in R$ that \begin{align*}
+x+ry &= \sum a_im_i + \sum rb_jm_j
+\end{align*}
+which is again in $IM$ since both sums are finite and $r b_j\in I$ by virtue of $I$ being a left ideal. Thus $IM$ satisfies the submodule criterion and is a submodule.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.6}
+Show that the intersection of any nonempty collection of submodules of an $R$-module is a submodule.
+\end{problem}
+\begin{solution}
+Let $M$ be an $R$-module and let $\{N_\alpha\}$ be an arbitrary collection of submodules of $M$. Let $N = \cap_{\alpha} N_\alpha$. Notice that $N$ is nonempty since each $N_\alpha$ must contain zero by virtue of being a subgroup over the overall module. Then let $x,y\in N$. Since each $N_\alpha$ is a submodule we have $x+ry\in N_\alpha$ for all $r\in R$ and all $\alpha$. We conclude that $x+ry\in N$ and so $N$ satisfies the submodule criterion. This proves the result.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.7}
+Let $N_1\subseteq N_2\subseteq \cdots$ be an ascending chain of submodules of $M$. Prove that $\cup_{i=1}^\infty N_i$ is a submodule of $M$.
+\end{problem}
+\begin{solution}
+Let $N=\cup_{i=1}^\infty N_i$. Note that $0\in N$ so $N$ is nonempty. Then let $x,y\in N$. There must exist $N_i$ so that $x,y\in N_i$ and by virtue of $N_i$ being a submodule we will have $x+ry\in N_i$ for all $r\in R$ and hence $x+ry\in N$. This proves that $N$ is a submodule.
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.8}
+An element $m$ of the $R$-module $M$ is called a \emph{torsion element} if $rm=0$ for some nonzero element $r\in R$. The set of torsion elements is denoted \[
+\Tor(M) \od \{m\in M \mid rm=0 \text{ for some nonzero } r\in R\}.
+\]
+\begin{enumerate}
+\item[(a)] Prove that if $R$ is an integral domain then $\Tor(M)$ is a submodule of $M$ (called the \emph{torsion} submodule of $M$).
+\item[(b)] Give an example of a ring $R$ and an $R$-module $M$ such that $\Tor(M)$ is not a submodule. [Consider the torsion elements in the $R$-module $R$.]
+\item[(c)] If $R$ has zero divisors show that every nonzero $R$-module has nonzero torsion elements.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+(a)\\
+Let $R$ be an integral domain and observe that $\Tor(M)$ is nonempty  since it contains zero. Then  let $x,y\in \Tor(M)$ and let $r_1,r_2\in R$ be nonzero so that $r_1x = 0$ and $r_2y = 0$. For an arbitrary $r\in R$ we can notice that \[
+r_1r_2(x+ry) = r_1r_2x + r_1r_2ry = r_2r_1x + r_1rr_2y = r_2\cdot 0 + r_1r\cdot 0 = 0+0 = 0
+\] where above we have used the commutativity of $R$. Furthermore observe that $r_1r_2$ is nonzero since $R$ is an integral domain, and so $x+ry\in \Tor(M)$. This proves that $\Tor(M)$ is a submodule by the submodule criterion.\\\\
+(b)\\
+Consider $\Z/6\Z$. The torsion elements of this ring as a module over itself are $\{0,2,3,4\}$ which do not even form an additive subgroup, much less a submodule.\\\\
+(c)\\
+Suppose $R$ has zero divisors and let $x,y\in R$ be nonzero so that $xy=0$. Then for some nonzero $m\in M$ consider $ym$. If $ym=0$ then $m$ is a nonzero torsion element. Otherwise $ym$ is a nonzero torsion element since $x(ym) = (xy)m = 0m = 0$. 
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.9}
+If $N$ is a submodule of $M$, the \emph{annihilator of $N$ in $R$} is defined to be $\{r\in R\mid rn=0 \text{ for all } n\in N\}$. Prove that the annihilator of $N$ in $R$ is a 2-sided ideal of $R$. 
+\end{problem}
+\begin{solution}
+Let $N$ be a submodule and let $I$ be its annihilator. Clearly $I$ contains 0 and so is nonempty. Furthermore if $a,b\in I$ then $a-b\in I$ since for any $n\in N$ we have \[
+(a-b)n = an + (-b)n = 0 -(bn) = 0-0 = 0
+\]
+where above we have used the fact that $(-b)n = -(bn)$ which can be proved analogously to property 2 in Problem 1. Thus $I$ is an additive subgroup of $R$. 
+
+Finally let $r\in R$ be arbitrary and let $a\in I$. Clearly $ra\in I$ since \[
+ran = r(an) = r0 = 0
+\]
+for any $n\in N$. We also have $ar\in I$ since \[
+arn = a(rn) = 0
+\]
+for any $n\in N$, where above we have used that $an\in N$. This proves that $I$ is a 2-sided ideal in $R$.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.10}
+If $I$ is a right ideal of $R$, the \emph{annihilator of $I$ in $M$} is defined to be $\{m\in M \mid am=0\text{ for all } a\in I\}$. Prove that the annihilator of $I$ in $M$ is a submodule of $M$.
+\end{problem}
+\begin{solution}
+Let $I$ be a right ideal of $R$ and let $N$ be its annihilator. Notice immediately that $0\in N$ since $an = 0$ for all $a\in I$. Then let $n,n'\in N$ and $r\in R$. We have that \begin{align*}
+a(n+rn') &= an + arn'\\
+& = 0 + (ar)n'\\
+& = 0+0\\
+& = 0
+\end{align*}
+where above we have used that $ar\in I$ by virtue of $I$ being a right ideal. This proves that $N$ satisfies the submodule criterion, and so it is a submodule. 
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.11}
+Let $M$ be the abelian group (i.e., $\Z$-module) $\Z/24\Z \times \Z/15\Z \times \Z/50\Z$. \begin{enumerate}
+\item[(a)] Find the annihilator of $M$ in $\Z$ (i.e. a generator for this principal ideal).
+\item[(b)] Let $I = 2\Z$. Describe the annihilator of $I$ in $M$ as a direct product of cyclic groups.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+(a)\\
+Notice that if $r\in \Z$ annihilates $M$ it must annihilate each coordinate. In particular, it must be a multiple of $24$, of $15$, and of $50$. This condition is both necessary and sufficient and so the annihilator of $M$ is $600\Z$, the ideal generated by the least common multiple of 24, 15, and 50.\\\\
+(b)\\
+The ideal $2\Z$ annihilates 0 and 12 in the first coordinate, 0 in the second coordinate, and 0 and 25 in the third coordinate. Hence the annihilator of $2\Z$ is the set \[
+\{(0,0,0), (12,0,0), (0,0,25), (12,0,25)\}
+\]
+which as a direct product of cyclic groups is isomorphic to $\Z/2\Z \times \Z/2\Z$. 
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.12}
+In the notation of the preceding exercises prove the following facts about annihilators.
+\begin{enumerate}
+\item[(a)] Let $N$ be a submodule of $M$ and let $I$ be its annihilator in $R$. Prove that the annihilator of $I$ in $M$ contains $N$. Give an example where the annihilator of $I$ in $M$ does not equal $N$. 
+\item[(b)] Let $I$ be a right ideal of $R$ and let $N$ be its annihilator in $M$. Prove that the annihilator of $N$ in $R$ contains $I$. Give an example where the annihilator of $N$ in $R$ does not equal $I$. 
+\end{enumerate}
+\end{problem}
+\begin{solution}
+(a)\\
+Let $A$ be the annihilator of $I$ in $M$ and let $n\in N$. Then $an = 0$ for all $a\in I$ by definition. But this means that $n\in A$. This proves that $N\subseteq A$ as desired. As an example where containment is strict let $M = \Z/2\Z\times \Z/2\Z$ be a $\Z$-module and let $N$ be the subgroup $\{(0,0),(1,0)\}$. Notice that $2\Z$ is the annihilator of $N$, but the annihilator of $2\Z$ is all of $M$.  \\\\
+(b)\\
+Let $J$ be the annihilator of $N$ in $R$ and let $a\in I$. Then $an = 0$ for all $n\in N$. But then by definition $a\in J$, and so $I\subseteq J$ as desired. An example where containment is strict occurs when considering the annihilator of $6\Z$ in the $\Z$-module $M= N = \Z/2\Z$. This ideal annihilates all of $M$, but the annihilator of $M$ is $2\Z$ which strictly contains $6\Z$. 
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.13}
+Let $I$ be an ideal of $R$. Let $M'$ be the subset of elements $a$ of $M$ that are annihilatored by some power, $I^k$ of the ideal $I$, where the power may depend on $a$. Prove that $M'$ is a submodule of $M$. [Use Excercise 7.]
+\end{problem}
+\begin{solution}
+Let $N_k$ be the annihilator of $I^k$. Elements of $I^k$ are of the form $\sum a_i^k$ where the sum is finite and each $a_i$ is an element of $I$. We thus notice that $N_k\subseteq N_{k+1}$ since if $n$ is annihilated by all finite sums $\sum a_i^k$ with $a_i\in I$ then \[
+\left(\sum a_i^{k+1}\right)n =\sum (a_i^{k+1}n) = \sum (a_i a_i^{k}n) = \sum (a_i 0) = 0
+\]
+and so it is also annihilated by elements of $I^{k+1}$. Thus the union of all $N_k$ is a submodule by Exercise 7. This union is exactly $M'$, proving the desired result.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.14}
+Let $z$ be an element of the center of $R$, i.e. $zr=rz$ for all $r\in R$. Prove that $zM$ is a submodule of $M$, where $zM = \{zm\mid m\in M\}$. Show that if $R$ is the ring of $2\times 2$ matrices over a field and $e$ is the matrix with a $1$ in position 1, 1 and zeros elsewhere then $eR$ is \emph{not} a left $R$-submodule (where $M=R$ is considered as a left $R$-module as in Example 1)---in this case the matrix $e$ is not in the center of $R$.
+\end{problem}
+\begin{solution}Note that $0 = z0 \in zM$ and so $zM$ is nonempty. Letting $zx,zy\in zM$ where $x,y\in M$ are abitrary and letting $r\in R$ we have that \[
+zx + rzy = zx+zry = z(x+ry) \in zM
+\]
+and so $zM$ satisfies the submodule criterion. 
+
+Notice that \[
+\begin{bmatrix}
+0&1\\
+0&0
+\end{bmatrix}\begin{bmatrix}
+a&b\\
+c&d
+\end{bmatrix} = \begin{bmatrix}
+c&d\\
+0&0
+\end{bmatrix}
+\]
+and so in the example $eM$ is the set of matrices with zero entries in the bottom row and arbitrary entries in the top row. This collection is not a submodule since as a set it is not invariant under the left action of $R$ on it. In particular, \[
+\begin{bmatrix}
+0&0\\
+1&0
+\end{bmatrix}\begin{bmatrix}
+1&1\\
+0&0
+\end{bmatrix} = \begin{bmatrix}
+0&0\\
+1&1
+\end{bmatrix}
+\]
+which is not a matrix with zero entries in the bottom row. We conclude that $e$ is indeed not in the center of $R$.
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.15}
+If $M$ is a finite abelian group then $M$ is naturally a $\Z$-module. Can this action be extended to make $M$ into a $\Q$-module?
+\end{problem}
+\begin{solution}
+No, not always. Consider the $\Z$-module $\Z/2\Z$. If this were naturally a $\Q$-module then it would have some element $\frac{1}{2}\cdot 1$. This element would satisfy \[
+\frac{1}{2}\cdot 1 + \frac{1}{2}\cdot 1 =\left(\frac{1}{2}+\frac{1}{2}\right)\cdot 1 = 1\cdot 1 = 1
+\]
+and in particular it would have order at least three as an element of the group $\Z/2\Z$. This is not possible. More generally, for any finite abelian group $G$ one can consider the action of $\frac{1}{|G|}$ to derive a contradiction. Thus finite abelian group never has a $\Q$ action compatible with the natural $\Z$ action. 
+
+  However, if an abelian group is divisible then we can extend its natural $\Z$ action to a $\Q$ action. Of course nonzero divisible abelian groups are necessarily infinite, so this falls outside the scope of the problem.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.16}
+Prove that the submodules $U_k$ describe in the example of $F[x]$-modules are all of the $F[x]$-submodules for the shift operator.
+\end{problem}
+\begin{solution}
+Let $V = F^n$ be a $F[x]$ module where $x$ acts as the shift operator and $F$ acts as normal. Let $U\subseteq V$ be a submodule of $V$. Let $k$ be the largest index such that there exists a vector in $U$ whose $k$-th coordinate is nonzero. Then we claim $U = U_k$. The inclusion $U\subseteq U_k$ is trivial since $U_k$ is all vectors in $V$ where coordinates following the $k$-th are zero. Hence we only have to show $U_k\subseteq U$. 
+
+To show that $U_k\subseteq U$  we will show straightforwardly that $e_i$ is in $U$ for $1\le i\le k$. The set of these $e_i$ forms a basis for $U_k$ and so it will follow that $U_k\subseteq U$. Notice that we really only need to construct $e_k$, since all $e_i$ for $i<k$ can be obtained by the action of $x$, which will still be in $U$ since $U$ is a submodule. To construct $e_k$, let $v = (v_1,v_2,\ldots,v_k,0,0,\ldots, 0)$ be a vector in $U$ where $v_k\neq 0$. Then we can construct the basis vector $e_k$ by repeatedly zeroing out smaller coordinates in $v_k$: first consider \[
+v-\left(\frac{v_{k-1}}{v_k} x\right) v \in U.
+ \] 
+ The $(k-1)$-th coordinate of this vector will be $v_k-v_k = 0$. We can repeat this process, acting on our new vector by $x^2$ multiplied by an appropriate scalar, subtracting the result, and so on. This eventually leads to a vector $(0,0,\ldots,0,v_k,0,0,\ldots,0)$ which can be transformed to $e_k$ via multiplication by the scalar $\frac{1}{v_k}$. This proves that $e_k\in U$, and as previously discussed this implies that $e_i\in U$ for all $1\le i\le k$. Hence $U_k\subseteq U$ and we are done.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.17}
+Let $T$ be the shift operator on the vector space $V$ and let $e_1,\ldots,e_n$ be the usual basis vector described in the example of $F[x]$-modules. If $m\ge n$ find $(a_mx^m + a_{m-1}x^{m-1}+\cdots +a_0)e_n$. 
+\end{problem}
+\begin{solution}
+For convenience let $p(x) = a_mx^m + a_{m-1}x^{m-1} + \cdots + a_0$. We compute directly that \begin{align*}
+p(x)\cdot e_n &= \left(\sum_{i=0}^m a_ix^i\right)\cdot e_n\\
+& = \sum_{i=0}^m a_i(x^i\cdot e_n)&&\text{Via module axioms}\\
+& = \sum_{i=0}^n a_i(x^i\cdot e_n) &&\text{Since $x^i\cdot e_n = 0$ for $i>n$}\\
+& = \sum_{i=0}^n a_i(e_{n-i}) &&\text{Since $x$ acts as shift operator}\\
+& = (a_n,a_{n-1},\ldots, a_1,a_0).
+\end{align*}
+Thus $p(x)\cdot e_n$ gives us the first $n+1$ coefficients in $p(x)$ in a vector in reverse order.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.18}
+Let $F=\R$. Let $V=\R^2$ and let $T$ be the linear transformation from $V$ to $V$ which is rotation clockwise about the origin by $\pi/2$ radians. Show that $V$ and $0$ are the only $F[x]$-submodules for this $T$. 
+\end{problem}
+\begin{solution}
+It suffices to show that every nontrivial submodule is equal to $V$. Given a nontrivial submodule $U$, let $v$ be a nonzero vector in $U$. Then notice that $x\cdot v \in U$ is linearly independent from $v$. Since $U$ must also be a subspace of the vector space $V$, we see that $U$ contains $\Span\{v,x\cdot v\} = V$. Hence $U$ is all of $V$.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.19}
+Let $F=\R$, let $V=\R^2$ and let $T$ be the linear transformation from $V$ to $V$ which is projection onto the $y$-axis. Show that $V,0,$ the $x$-axis and the $y$-axis are the only $F[x]$-submodules for this $T$. 
+\end{problem}
+\begin{solution}
+We know that $0$ and $V$ are always submodules. It remains to characterize the nontrivial proper submodules. Notice that such submodules are necessarily 1-dimensional subspaces of $V = \R^2$ since submodules under the action of $F[x]$ are always subspaces and 0- and 2-dimensional subspaces are trivial and non-proper submodules respectively. 
+
+Let $U = \Span\{v\}$ be some nontrivial proper submodule. Since $U$ is 1-dimensional we must have that $x\cdot v = ax$ for some scalar $a$. In particular $v$ is an eigenvector of $T$ and so $U$ is an eigenspace of $T$. The only eigenspaces are clearly the $x$ and $y$ axes. One can verify quickly that these are submodules: they both are subspaces (in particular subgroups) of $V$ and are invariant under the action of $F[x]$ since the $y$-axis is only scaled and the $x$-axis is annihilated by any nonunits in $F[x]$. 
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.20}
+Let $F=\R$, let $V=\R^2$ and let $T$ be the linear transformation from $V$ to $V$ which is rotation clockwise about the origin by $\pi$ radians. Show that \emph{every} subspace of $V$ is an $F[x]$ submodule for this $T$. 
+\end{problem}
+\begin{solution}
+Rotating by $\pi$ radians is the same as additive negation. Hence we have $x\cdot v = -v$ for all vectors $v$. Being invariant under the action of $F$ and $x$ is enough to be a submodule, and subspaces are invariant under both by the definition of being a subspace (and hence an additive subgroup). Thus all subspaces are submodules.
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.21}
+Let $n\in \Z^+$, $n>1$ and let $R$ be the ring of $n\times n$ matrices with entries from a field $F$. Let $M$ be the set of $n\times n$ matrices with arbitrary elments of $F$ in the first column and zeros elsewhere. Show that $M$ is a submodule of $R$ when $R$ is considered as a left module over itself, but $M$ is not a submodule of $R$ when $R$ is considered as a right $R$-module.
+\end{problem}
+\begin{solution}
+It is clear that $M$ is an additive subgroup of the module $R$. When $R$ acts on $M$ from the left $M$ is invariant since the $i$-th column of $rm$ for $r\in R$ and $m\in M$ is just the product of $r$ with the $i$-th column in $m$. For $i>1$ this column is zero and so must be $r$'s product with it. Hence $rm\in M$. 
+
+On the other hand when $R$ acts from the right the columns in $mr$ beyond the first may nonzero, as illustrated by the small example below.\[
+\begin{bmatrix}
+1&0\\
+1&0
+\end{bmatrix}\begin{bmatrix}
+1&1\\
+1&1
+\end{bmatrix} = \begin{bmatrix}
+1&1\\
+1&1
+\end{bmatrix} \notin M.
+\]
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.22}
+Suppose that $A$ is a ring with identity $1_A$ that is a (unital) left $R$-module satisfying $r\cdot(ab) = (r\cdot a)b = a(r\cdot b)$ for all $r\in R$ and $a,b\in A$. Prove that the map $f:R\to A$ defined by $f(r) = r\cdot 1_A$ is a ring homomorphism mapping $1_R$ to $1_A$ and $f(R)$ is contained in the center of $A$. Conclude that $A$ is an $R$-algebra and that the $R$-module structure on $A$ induced by its algebra structure is precisely the original $R$-module structure.
+\end{problem}
+\begin{solution}
+That $f$ maps $1_R$ to $1_A$ follows from the fact that $f(1_R) = 1_R\cdot 1_A = 1_A$. Given $r,s\in R$ we have that \[
+f(r+s) = (r+s)\cdot 1_S = r\cdot 1_S + s\cdot 1_S = f(r)+f(s)
+\]
+and \[
+f(rs) = rs\cdot 1_A  = r\cdot (s\cdot 1_A) = r\cdot (s\cdot 1_A1_A) = r\cdot (1_A(s\cdot 1_A)) = (r\cdot 1_A)(s\cdot 1_A) = f(r)f(s)
+\]
+so $f$ is a ring homomorphism. Let $r\cdot 1_A \in f(R)$ and $a\in A$. Then we have that \[
+(r\cdot 1_A)a = r\cdot (1_A a) = r\cdot a = r\cdot (a1_A) = a(r\cdot 1_A) 
+\]
+and so $f(R)$ is in the center of $A$. This proves that $A$ is an $R$-algebra. The $R$-module structure on $A$ as an algebra is the same as its original structure since $r\cdot a = r\cdot (1_A a) = (r\cdot 1_A)a.$
+
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.1.23}
+Let $A$ be the direct product ring $\C\times \C$ (cf Section 7.6). Let $\tau_1$ denote the identity map on $\C$ and let $\tau_2$ denote complex conjugation. For any pair $p,q\in \{1,2\}$ (not necessarily distinct) define \[
+f_{p,q}:\C\to\C\times \C\quad\text{ by }\quad f_{p,q}(z) = (\tau_p(z),\tau_q(z)).
+\]
+So, for example $f_{2,1}: z\mapsto (\overline{z},z)$ where $\overline{z}$ is the complex conjugate of $z$, i.e. $\tau_2(z)$.\begin{enumerate}
+\item[(a)] Prove that each $f_{p,q}$ is an injective ring homomorphism, and that they all agree on the subfield $\R$ of $\C$. Deduce that $A$ has four distinct $\C$-algebra structures. Explicitly give the action $z\cdot(u,v)$ of a complex number $z$ on an ordered pair in $A$ in each case.
+\item[(b)] Prove that if $f_{p,q}\neq f_{p',q'}$ then the identity map on $A$ is \emph{not} a $\C$-algebra homomorphism from $A$ considered as a $\C$-algebra via $f_{p,q}$ to $A$ considered a $\C$ algebra via $f_{p',q'}$ (although the identity is an $\R$ algebra isomorphism).
+\item[(c)] Prove that for any pair $p,q$ there is some ring isomorphism from $A$ to itself such that $A$ is isomorphic as a $\C$ algebra via $f_{p,q}$ to $A$ considered as a $\C$ algebra via $f_{1,1}$ (the ``natural'' $\C$-algebra structure on $A$).
+\end{enumerate}
+\emph{Remark:} In the preceding exercise $A=\C\times \C$ is not a $\C$-algebra over either of the direct factor component copies of $\C$ (for example the subring $\C\times 0 \cong \C$) since it is not a unital module over these copies of $\C$ (the 1 of these subrings is not the same as the 1 of $A$).
+\end{problem}
+\begin{solution}
+(a)\\
+That each $f_{p,q}$ agrees on $\R$ is trivial since complex conjugation fixes $\R$. Also recall that complex conjugation is an automorphism of $\C$ and so each $\tau_p$ is an automorphism. Hence $f_{p,q}$ behaves as a ring homomorphism in each coordinate and overall will be a homomorphism. It is a proper ring homomorphism since it maps $1_\C = 1$ to $1_{\C\times \C} = (1,1)$.
+  That each $f_{p,q}$ is injective follows from the injectivity of $\tau_p$ for $p=1,2$. In particular if $z$ is nonzero then $f_{p,q}(z)$ is nonzero for all $p,q$ and hence the kernel of $f_{p,q}$ is trivial.
+
+
+The explicit action induced by $f_{p,q}$ is just\[
+z\cdot(u,v) = (\tau_p(z)u, \tau_q(z)v).
+\]
+In particular, $f_{1,1}$ acts via natural scalar multiplication. \\\\
+(b)\\
+If $f_{p,q} \neq f_{p',q'}$ then we notice that \[
+f_{p,q}(i) \neq f_{p',q'}(i)
+\]
+since there must be a coordinate in which one map conjugates and the other does not. Hence the action of $i\in \C$ induced by $f_{p,q}$ differs from that induced by $f_{p',q'}$ and in particular there exists $(z_1,z_2)\in \C\times\C$ so that the action of $i$ on $(z_1,z_2)$ induced by each is a different element of $\C\times \C$. Denote by $\cdot$ the action induced by $f_{p,q}$ and by $\circ$ the action induced by $f_{p',q'}$. If the identity map $\Id$ on $\C \times \C$ were a $\C$-algebra homomorphism we would have that \[i\cdot(z_1,z_2) = \Id(i\cdot (z_1,z_2)) = i\circ \Id((z_1,z_2)) = i\circ (z_1,z_2)\] which is a contradiction. Hence the identity is not a $\C$-algebra homomorphism.\\\\
+(c)\\
+For $f_{p,q}$ the isomorphism of $\C\times\C$ which makes it isomorphic to the natural action is the isomorphism which acts as $\tau_p$ in the first coordinate and $\tau_q$ in the second. Let $\phi$ denote this map. The map $\phi$ is clearly a ring isomorphism since $\tau_p$ and $\tau_q$ are ring isomorphisms of each coordinate. To see that this gives $\C\times\C$ the natural $\C$-algebra structure, let $\cdot$ denote the natural action and $\circ$ denote the action induced by $f_{p,q}$. Then we have that $\phi$ is a $\C$-algebra isomorphism since \begin{align*}
+\phi(z\circ (z_1,z_2))& = \phi((\tau_p(z)z_1,\tau_q(z)z_2))\\
+& = \big(\tau_p(\tau_p(z)z_1),\tau_q(\tau_q(z)z_2)\big)\\
+& = (z\tau_p(z_1),z\tau_q(z_2)) &&\text{Since $\tau_p(\tau_p(z)) = z$ for all $\tau_p$}\\
+& = z\cdot(\tau_p(z_1),\tau_q(z_2))\\
+&=z\cdot \phi((z_1,z_2)).
+\end{align*}
+Hence $\C\times\C$ with the $f_{p,q}$ action is $\C$-algebra isomorphic to $\C\times\C$ with the natural action, as desired.
+
+\end{solution}\oneperpage
+
+
+\end{section}
+
+
+
+
+
+
+
+
+
+\begin{section}{Quotient Modules and Module Homomorphisms}
+In these exercises $R$ is a ring with 1 and $M$ is a left $R$-module.
+\begin{problem}\label{ex:10.2.1}
+Use the submodule criterion to show that kernels and images of $R$-module homomorphisms are submodules.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.2}
+Show that the relation ``is $R$-module isomorphic to'' is an equivalence relation on any set of $R$-modules.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.3}
+Give an explicit example of a map from one $R$-module to another which is a group homomorphism but not an $R$-module homomorphism.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.4}
+Let $A$ be any $\Z$-module, let $a$ be any element of $A$ and let $n$ be a positive integer. Prove that the map $\phi_a:\Z/n\Z\to A$ given by $\phi_a(\overline{k}) = ka$ is a well defined $\Z$-module homomorphism if and only if $na=0$. Prove that $\Hom_\Z(\Z/n\Z, A)\cong A_n$ where $A_n=\{a\in A \mid na=0\}$ (so $A_n$ is the annihilator of $A$ in the ideal $(n)$ of $\Z$ --- cf. Exercise 10, Section 1).
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.5}
+Exhibit all $\Z$-module homomorphisms from $\Z/30\Z$ to $\Z/21\Z$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.6}
+Prove that $\Hom_\Z(\Z/n\Z, \Z/m\Z) \cong \Z/(n,m)\Z$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.7}
+Let $z$ be a fixed element of the center of $R$. Prove that the map $m\mapsto zm$ is an $R$-module homomorphism from $M$ to itself. Show that for a commutative ring $R$ the map from $R$ to $\End_R(M)$ given by $r\mapsto RI$ is a ring homomorphism (where $I$ is the identity endomorphism).
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.8}
+Let $\phi:M\to N$ be an $R$-module homomorphism. Prove that $\phi(\Tor(M)) \subseteq \Tor(n)$ (cf. Exercise 8 in Section 1). 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.9}
+Let $R$ be a commutative ring. Prove that $\Hom_R(R,M)$ and $M$ are isomorphic as left $R$-modules. [Show that each element of $\Hom_R(R,M)$ is determined by its value on the identity of $R$.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.10}
+Let $R$ be a commutative ring. Prove that $\Hom_R(R,R)$ and $R$ are isomorphic as rings.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.11}
+Let $A_1,A_2,\ldots, A_n$ be $R$-modules and let $B_i$ be a submodule of $A_i$ for each $i=1,2,\ldots,n$. Prove that \[
+(A_1\times\cdots \times A_n)/(B_1\times \cdots \times B_n) \cong (A_1/B_1)\times \cdots \times (A_n/B_n).
+\] [Recall Exercise 14 in Section 5.1.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.12}
+Let $I$ be a left ideal of $R$ and let $n$ be a positive integer. Prove \[
+R^n/IR^n \cong R/IR\times\cdots\times R/IR \quad \text{($n$ times)}
+\]
+where $IR^n$ is defined as in Exercise 5 of Section 1. [Use the preceding exercise.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.13}
+Let $I$ be a nilpotent ideal in a commutative ring $R$ (cf. Exercise 37, 7.3), let $M$ and $N$ be $R$-modules and let $\phi:M\to N$ be an $R$-module homomorphism. Show that if the induced map $\overline{\phi}:M/IM \to N/IN$ is surjective, then $\phi$ is surjective.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.2.14}
+Let $R=\Z[x]$ be the ring of polynomials in $x$ and let $A = \Z[t_1,t_2,\ldots]$ be the ring of polynomials in the independent indeterminates $r_1,r_2,\ldots$. Define an action of $R$ on $A$ as follows: 1) let $1\in R$ act on $A$ as the identity, 2) for $n\ge 1$ let $x^n\circ 1 = t_n$, let $x^n\circ t_i = t_{n+i}$ for $i=1,2\ldots$, and let $x^n$ act as $0$ on monomials in $A$ of (total) degree at least two, and 3) extend $\Z$-linearly, i.e., so that the module axioms 2(a) and 2(c) are satisfied. \begin{enumerate}
+\item[(a)] Show that $x^{p+1}\circ t_i = x^p\circ(x^q\circ t_i) = t_{p+q+i}$ and use this show that under this action the ring $A$ is a (unital) $R$-module.
+\item[(b)] Show that the map $\phi:R\to A$ defined by $\phi(r) = r\circ 1_A$ is an $R$-module homomorphism of the ring $R$ into the ring $A$ mapping $1_R$ to $1_A$, but not a ring homomorphism from $R$ to $A$.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+\end{section}
+
+
+
+
+
+
+
+
+
+\begin{section}{Generation of Modules, Direct Sums, and Free Modules}
+In these exercises $R$ is a ring with 1 and $M$ is a left $R$-module.
+\begin{problem}\label{ex:10.3.1}
+Prove that if $A$ and $B$ are sets of the same cardinality, then the free modules $F(A)$ and $F(B)$ are isomorphic. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.2}
+Assume $R$ is commutative. Prove that $R^n\cong R^m$ if and only if $n=m$, i.e., two free $R$-modules of finite rank are isomorphic if and only if they have the same rank. [Apply Exercise 12 of Section 2 with $I$ a maximal ideal of $R$. You may assume that if $F$ is a field, then $F^n\cong  F^m$ if and only if $n=m$, i.e. two finite dimensional vector spaces over $F$ are isomorphic if and only if they have the same dimension --- this will be proved later in Section 11.1]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.3}
+Show that the $F[x]$-modules in Exercises 18 and 19 of Section 1 are both cyclic. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.4}
+An $R$-module $M$ is called a \emph{torsion} module if for each $m\in M$ there is a nonzero element of $r\in R$ such that $rm=0$, where $r$ may depend on $m$ (i.e., $M=\Tor(M)$ in the notation of Exercise 8 of Section 1).Prove that every finite abelian group is a torsion $\Z$-module. Give an example of an infinite abelian group that is a torsion $\Z$-module.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.5}
+Let $R$ be an integral domain. Prove that every finitely generated torsion $R$-module has a nonzero annihilator i.e., there is a nonzero element $r\in R$ such that $rm=0$ for all $m\in M$ --- here $r$ does not depend on $m$ (the annihilator of a module was defined in Exercise 9 of Section 1). Give an example of a torsion $R$-module whose annihilator is the zero ideal. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.6}
+Prove that if $M$ is a finitely generated $R$-module that is generated by $n$ elements then every quotient of $M$ may be generated by $n$ (or fewer) elements. Deduce that quotients of cyclic modules are cyclic. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.7}
+Let $N$ be a submodule of $M$. Prove that if both $m/N$ and $N$ are finitely generated then so is $M$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.8}
+Let $S$ be the collection of sequences $(a_1,a_2,a_3,\ldots)$ of integers $a_1,a_2,a_3,\ldots$ where all but finitely many of the $a_i$ are 0 (called the \emph{direct sum} of infinitely many copies of $\Z$). Recall taht $S$ is a ring under componentwise addition and multiplication and $S$ does not have a multiplicative identity --- cf. Exercise 20, Section 7.1. Prove that $S$ is not finitely generated as a module over itself. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.9}
+An $R$-module $M$ is called \emph{irreducible} if $M\neq 0$ and if $0$ and $M$ are the only submodules of $M$. Show that $M$ is irreducible if and only if $M\neq 0$ and $M$ is a cyclic module with any nonzero element as a generator. Determine all the irreducible $\Z$-modules. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.10}
+Assume $R$ is commutative. Show that an $R$-module $M$ is irreducible if and only if $M$ is isomorphic (as an $R$-module) to $R/I$ where $I$ is a maximal ideal of $R$. [By the previous exercise, if $M$ is irreducible then there is a natural map $R\to M$ defined by $r\mapsto rm$ where $m$ is any fixed nonzero element of $M$.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.11}
+Show that if $M_1$ and $M_2$ are irreducible $R$-modules, then any nonzero $R$-module homomorphism from $M_1$ to $M_2$ is an isomorphism. Deduce that if if $M$ is irreducible then $\End_R(M)$ is a division ring (this result is called \emph{Schur's Lemma}). [Consider the kernel and the image.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.12}
+Let $R$ be a commutative ring and let $A,B$ and $M$ be $R$-modules. Prove the following isomorphisms of $R$-modules:\begin{enumerate}
+\item[(a)] $\Hom_R(A\times B,M)\cong \Hom_R(A,M)\times \Hom_R(B,M)$
+\item[(b)] $\Hom_R(M,A\times B)\cong \Hom_R(M,A)\times \Hom_R(M,B)$.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.13}
+Let $R$ be a commutative ring and let $F$ be a free $R$-module of finite rank. Prove the following isomorphism of $R$-modules: $\Hom_R(F,R)\cong F$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.14}
+Let $R$ be a commutative ring and let $F$ be the free $R$-module of rank $n$. Prove that $\Hom_R(F,M)\cong M\times \cdots\times M$ ($n$ times). [Use Exercise 9 in Section 2 and Exercise 12.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.15}
+An element $e\in R$ is called a \emph{central idempotent} if $e^2=e$ and $er = re$ for all $r\in R$. If $e$ is a central idempotent in $R$, prove that $M= eM\oplus (1-e)M$. [Recall Exercise 14 in Section 1.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+The next two exercises establish the Chinese Remainder Theorem for modules (cf. Section 7.6).
+
+\begin{problem}\label{ex:10.3.16}
+For any ideal $I$ of $R$ let $IM$ be the submodule defined in Exercise 5 of Section 1. Let $A_1,\ldots,A_k$ be any ideals in the ring $R$. Prove that the map \[
+M\to A/A_1M\times\cdots M/A_k M \quad\text{ defined by }\quad m\mapsto (m+A_1M,\ldots,m+A_kM)
+\]
+is an $R$-module homomorphism with kernel $A_1M\cap A_2M\cap \cdots \cap A_kM$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.17}
+In the notation of the preceding exercise, assume further that the ideals $A_1,\ldots A_k$ are pairwise comaximal (i.e. $A_i+A_j = R$ for al $i\neq j$). Prove that \[
+M/(A_1\cdots A_k)M\cong M/A_1M\times \cdots MA_kM.
+\]
+[See the proof of the Chinese Remainder Theorem for rings in Section 7.6.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.18}
+Let $R$ be a Principal Ideal Domain and let $M$ be an $R$-module that is annihilated by the nonzero, proper ideal $(a)$. Let $a = p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}$ be the unique factorization of $a$ into distinct prime powers in $R$. Let $M_i$ be the annihilator of $p_i^{\alpha_i}$ in $M$, i.e. $M_i$ is the set $\{m\in M\mid p_i^{\alpha_i}m = 0\}$---called the \emph{$p_i$-primary component of $M$}. Prove that \[
+M = M_1\oplus M_2\oplus \cdots \oplus M_k.
+\]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.19}
+Show that if $M$ is a finite abelian group of order $a=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}$ then, considered as a $\Z$-module, $M$ is annihilated by $(a)$, the $p_i$-primary component of $M$ is the unique Sylow $p_i$-subgroup of $M$ and $M$ is isomorphic to the direct product of its Sylow subgroups.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.20}
+Let $I$ be a nonempty index set and for each $i\in I$ let $M_i$ be an $R$-module. The \emph{direct product} of the modules $M_i$ is defined to be their direct product as abelian groups (cf. Exercise 15 in Section 5.1) with the action of $R$ componentwise multiplication. The \emph{direct sum} of the modules $M_i$ is defined to be the restricted direct product of the abelian groups $M_i$ (cf. Exercise 17 in Section 5.1) with the action of $R$ componentwise multiplication. In other words, the direct sum of the $M_i$'s is the subset of the direct product $\prod_{i\in I}M_i$, which consists of all elements $\prod_{i\in I}m_i$ such that only finitely many of the components $m_i$ are nonzero; the action of $R$ on the direct product or direct sum is given by $r\prod_{i\in I}m_i = \prod_{i\in I}rm_i$ (cf. Appendix I for the definition of the Cartesian products of infinitely many sets). The direct sum will be denoted by $\oplus_{i\in I} M_i$. \begin{enumerate}
+\item[(a)] Prove that the direct product of the $M_i$'s is an $R$-module and the direct sum of the $M_i$'s is a submodule of their direct product.
+\item[(b)] Show that if $R=\Z$, $I=\Z^+$ and $M_i$ is the cyclic group of order $i$ for each $i$, then the direct sum of the $M_i$'s is not isomorphic to their direct product. [Look at torsion.]
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.21}
+let $I$ be a nonempty index set and for each $i\in I$ let $N_i$ be a submodule of $M$. Prove that the following are equivalent:\begin{enumerate}
+\item[(i)] the submodule of $M$ generated by all the $N_i$'s i isomorphic to the direct sum of the $N_i$'s
+\item[(ii)] if $\{i_1,i_2,\ldots,i_k\}$ is any finite subset of $I$ then $N_{i_1}\cap (N_{i_2}+\cdots +N_{i_k}) = 0$
+\item[(iii)] if $\{i_1,i_2,\ldots,i_k\}$ is any finite subset of $I$ then $N_1+\cdots +N_k = N_1\oplus \cdots \oplus N_k$
+\item[(iv)] for every element $x$ of the submodule of $M$ generated by the $N_i$'s there are unique elements $a_i\in N_i$ for all $i\in I$ such that all but a finite number of the $a_i$ are zero and $x$ is the (finite) sum of the $a_i$. 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.22}
+Let $R$ be a Principal Ideal Domain, let $M$ be a torsion $R$-module (cf. Exercise 4) and let $p$ be a prime in $R$ (do not assume $M$ is finitely generated, hence it need not have a nonzero annihilator --- cf. Exercise 5). The \emph{$p$-primary component} of $M$ is the set of all elements of $M$ that are annihilated by some positive power of $p$.
+\begin{enumerate}
+\item[(a)] Prove that the $p$-primary component is a submodule. [See Exercise 13 in Section 1.]
+\item[(b)] Prove that this definition of $p$-primary component agrees with the one given in Exercise 18 when $M$ has a nonzero annihilator.
+\item[(c)] Prove that $M$ is the (possible infinite) direct sum of its $p$-primary components, as $p$ runs over all primes of $R$.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.23}
+Show that any direct sum of free $R$-modules is free.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.24}
+\emph{(An arbitrary direct product of free modules need not be free)} For each positive integer $i$ let $M_i$ be the free $\Z$-module $\Z$, and let $M$ be the direct product $\prod_{i\in\Z^+}M_i$ (cf. Exercise 20). Each element of $M$ can be written uniquely in the form $(a_1,a_2,a_3,\ldots)$ with $a_i\in \Z$ for all $i$. Let $N$ be the submodule of $M$ consisting of all such tuples with only finitely many nonzero $a_i$. Assume $M$ is a free $\Z$ module with basis $\cB$. \begin{enumerate}
+\item[(a)] Show that $N$ is countable.
+\item[(b)] Show that there is some countable subset $\cB_1$ of $\cB$ such that $N$ is contained in the submodule, $N_1$, generated by $\cB_1$. Show also that $N_1$ is countable.
+\item[(c)] Let $\overline{M} = M/N_1$. Show that $\overline{M}$ is a free $\Z$-module. Deduce that if $\overline{x}$ is any nonzero element of $\overline{M}$ then there are only finitely many distinct positive integers $k$ such that $\overline{x} = k\overline{m}$ for some $m\in M$ (depending on $k$).
+\item[(d)] Let $\cS = \{(b_1,b_2,b_3,\ldots)\mid b_i=\pm i!\text{ for all } i\}$. Prove that $\cS$ is uncountable. Deduce that there is some $s\in \mathcal{S}$ with $s\notin N_1$.
+\item[(e)] Show that the assumption $M$ is free leads to a contradiction: By (d) we may choose $s\in\cS$ with $s\notin N_1$. Show that for each positive integer $k$ there is some $m\in M$ with $\overline{s} = k\overline{m}$, contrary to (c). [Use the fact that $N\subseteq N_1$.]
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.25}
+In the construction of direct limits, Exercise 8 of Section 7.6, show that if all $A_i$ are $R$-modules and the maps $\rho_{ij}$ are $R$-module homomorphisms, then the direct limit $A=\varinjlim A_i$ may be given the structure of an $R$-module in a natural way such that the maps $\rho_i:A_i\to A$ are all $R$-module homomorphisms. Verify the corresponding universal property (part (e)) for $R$-module homomorphism $\phi_i:A_i\to C$ commuting with the $\rho_{ij}$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.26}
+Carry out the analysis of the preceding exercise corresponding to the inverse limits to show that the invese limit of $R$-modules is an $R$-module satisfying the appropriate universal property (cf. Exercise 10 of Section 7.6).
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.3.27}
+\emph{(Free modules over noncommutative rings need not have a unique rank)} Let $M$ be the $\Z$-module $\Z\times \Z\times \cdots$ of Exercise 24 and let $R$ be its endomorphism ring, $R = \End_\Z(M)$ (cf. Exercises 29 and 30 in Section 7.1). Define $\phi_1,\phi_2\in R$ by \begin{align*}
+\phi_1(a_1,a_2,a_3,\ldots)&=(a_1,a_3,a_5,\ldots)\\
+\phi_2(a_1,a_2,a_3,\ldots)&=(a_2,a_4,a_6,\ldots)
+\end{align*}
+\begin{enumerate}
+\item[(a)] Prove that $\{\phi_1,\phi_2\}$ is a free basis of the left $R$-module $R$. [Define the maps $\psi_1$ and $\psi_2$ by $\psi_1(a_1,a_2,\ldots) =(a_1,0,a_2,0,\ldots)$ and $\psi_2(a_1,a_2,\ldots) =(0a_1,0,a_2,\ldots)$. Verify that $\phi_i\psi_i = 1$, $\phi_1\psi_2 = 0 = \phi_2\psi_1$ and $\psi_1\phi+\psi_2\phi_2 = 1$. use these relations to prove that $\psi_2,\phi_2$ are independent and gereate $R$ as a left $R$-module.]
+\item[(b)] Use $(a)$ to prove that $R\cong R^2$ and deduce that $R\cong R^n$ for all $n\in \Z^+$.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\end{section}
+
+
+
+
+
+
+
+
+
+\begin{section}{Tensor Products of Modules}
+Let $R$ be a ring with 1. 
+\begin{problem}\label{ex:10.4.1}
+Let $f:R\to S$ be a ring homomorphism from the ring $R$ to the ring $S$ with $f(1_R) = 1_S$. Verify the details that $sr = sf(r)$ deefines a right $R$-action on $S$ under which $S$ is an $(S,R)$-bimodule. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.2}
+Show that the element ``$2\otimes 1$'' is $0$ in $\Z\otimes_\Z \Z/2\Z$ but is nonzero in $2\Z\otimes_\Z \Z/2\Z$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.3}
+Show that $\C\otimes_\R\C$ and $C\otimes _\C\C$ are both left $\R$-modules but are not isomorphic as $\R$-modules.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.4}
+Show that $\Q\otimes_\Z\Q$ and $Q\otimes_\Q\Q$ are isomorphic left $\Q$-modules. [Show they are both 1-dimensional vector spaces over $\Q$.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.5}
+Let $A$ be a finite abelian group of order $n$ and let $p^k$ be the largest power of the prime $p$ dividing $n$. Prove that $\Z/p^k\Z\otimes \Z A$ i sisomorphic to the Sylow $p$-subgroup of $A$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.6}
+If $R$ is any integral domain with a quotient field $Q$, prove that $(Q/R)\otimes_R(Q/R) = 0$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.7}
+If $R$ is any integral domain with quotient field $Q$ and $N$ is a left $R$-module, prove that every element of the tensor product $Q\otimes_R N$ can be written as a simple tensor of the form $(1/d)\otimes n$ for some nonzero $d\in R$ and some $n\in N$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.8}
+Suppose $R$ is an integral domain with quotient field $Q$ and let $N$ be any $R$-module. Let $U = R^\times$ be the set of nonzero elements in $R$ and define $U^{-1}N$ to be the set of equivalence classes of ordered pairs of elements $(u,n)$ with $u\in U$ and $n\in N$ under the equivalence relation $(u,n)\sim (u',n)$ if and only if $u'n = un'$ in $N$. 
+\begin{enumerate}
+\item[(a)] Prove that $U^{-1}N$ is an abelian group under the addition defined by $\overline{(u_1,n_1)} + \overline{(u_2,n_2)} = \overline{(u_1u_2,u_2n_1+u_1n_2)}$. Prove that $r\overline{(u,n)} = \overline{(u,rn)}$ defines an action of $R$ on $U^{-1}N$ making it into an $R$-module. [This is an example of \emph{localization} considered in general in Section 4 of Chapter 15, cf. also Section 6 in Chapter 7.]
+\item[(b)]  Show that the map from $Q\times N$ to $U^{-1}N$ defined by sending $(a/b,n)$ to $\overline{(b,an)}$ for $a\in R, b\in U,n\in N$, is an $R$-balanced map, so induces a homomorphism $f$ from $Q\otimes_RN$ to $U^{-1}N$. Show that the map $g$ from $U^{-1}N$ to $Q\otimes_RN$ defined by $g(\overline{(u,n)}) = (1/u)\otimes n$ is well defined and is an inverse homomorphism to $f$. Conclude that $Q\otimes _R N \cong U^{-1}N$ as $R$-modules. 
+\item[(c)] Conclude from (b) that $(1/d)\otimes n$ is 0 in $Q\otimes_R N$ if and only if $rn=0$ for some nonzero $r\in R$. 
+\item[(d)] If $A$ is an abelian group show that $\Q\otimes_Z A = 0$ if and only if $A$ is a torsion abelian group (i.e., every element of $A$ has finite order). 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.9}
+Suppose $R$ is an integral domain with the quotient field $Q$ and let $N$ be any $R$-module. Let $Q\otimes_RN$ be the module obtained from $N$ by extension of scalars from $R$ to $Q$. Prove that the kernel of the $R$-module homomorphism $\iota:N\to Q\otimes_RN$ is the torsion submodule of $N$ (cf. Exercise 8 in Section 1).  [Use the previous exercise.] 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.10}
+Suppose $R$ is commutative and $N\cong R^n$ is a free $R$-module of rank $n$ with $R$-module basis $e_1,\ldots,e_n$. \begin{enumerate}
+\item[(a)] For any nonzero $R$-module $M$ show that every element of $M\otimes N$ can be written uniquely in the form $\sum_{i=1}^nm_i\otimes e_1$ where $m_i\in M$ . Deduce that if $\sum_{i=1}^n m_i\otimes e_i = 0$ in $M\otimes N$ then $m_i=0$ for $i=1,\ldots,n$. 
+\item[(b)] Show that if $\sum m_i\otimes n_i = 0$ in $M\otimes N$ where $n_i$ are merely assumed to be $R$-linearly independent then it is not necessarily true that all $m_i$ are 0. [Consider $R=\Z,n=1,M=\Z/2\Z$ and the element $1\otimes 2$.]
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.11}
+Let $\{e_1,e_2\}$ be a basis of $V=\R^2$. Show that the element $e_1\otimes e_2 + e_2\otimes e_1$ in $V\otimes_\R V$ cannot be written as a simple tensor $v\otimes w$ for any $v,w\in \R^2$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.12}
+Let $V$ be a vector space over the field $F$ and let $v,v'$ be nonzero elements of $V$. Prove that $v\otimes v' = v'\otimes v$ in $V\otimes_FV$ if and only if $v=av'$ for some $a\in F$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.13}
+Prove that the usual dot product of vectors defined by letting $(a_1,\ldots,a_n)\cdots(b_1,\ldots,b_n)$ be $a_1b_1+\cdots+a_nb_n$ is a bilinear map from $R^n\times R^n$ to $\R$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.14}
+Let $I$ be an arbitrary nonempty index set and for each $i\in I$ let $N_i$ be a left $R$-modules. Let $M$ be a right $R$-module. Prove the group isomorphism: $M\otimes (\oplus_{i\in I} N_i)\cong \oplus_{i\in I}(M\otimes N_i)$, where the direct sum of an arbitrary collection of modules is defined in Exercise 20, Section 3. [Use the same argument as for the direct sum of two modules, taking care to note where the direct \emph{sum} hypothesis is needed --- cf. the next exercise.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.15}
+Show that tensor products do not commute with direct products in general. [Consider the extension of scalars from $\Z$ to $\Q$ of the direct product of the modules $M_i = \Z/2^i\Z$, $i=1,2,\ldots$]. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.16}
+Suppose $R$ is commutative and let $I$ and $J$ be ideals of $R$, so $R/I$ and $R/J$ are naturally $R$-modules. \begin{enumerate}
+\item[(a)] Prove that every element of $R/I\otimes _R R/J$ can be written as a simple tensor of the form $(1\text{ mod } I)\otimes (r\text{ mod } J)$. 
+\item[(b)] Prove that there is an $R$-module isomorphism $R/I\otimes_R R/J\cong R/(I+J)$ mapping $(r\text{ mod } I)\otimes (r'\text{ mod } J)$ to $rr'$ mod $(I+J)$. 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.17}
+Let $I=(2,x)$ be the ideal generated by $2$ and $x$ in the ring $R=\Z[x]$. The ring $\Z/2\Z = R/I$ is naturally an $R$-module annihilated by both $2$ and $x$. \begin{enumerate}
+\item[(a)] Show that the map $\phi:I\times I\to \Z/2\Z$ defined by \[
+\phi(a_0+a_1x+\cdots a_nx^n,b_0+b_1x+\cdots b_mx^m) = \frac{a_0}{2}b_1\text{ mod } 2 
+\]
+is $R$-bilinear.
+\item[(b)] Show that there is an $R$-module homomorphism from $I\otimes_R I\to\Z/2\Z$ mapping $p(x)\otimes q(x)$ to $\frac{p(0)}{2}q'(0)$ where $q'$ denotes the usual polynomial derivative of $q$. 
+\item[(c)] Show that $2\otimes x \neq x\otimes 2$ in $I \otimes_RI$. 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.18}
+Suppose $I$ is a principal ideal in the integral domain $R$. Prove that the $R$-modules $I\otimes_R I$ has no nonzero torsion elements (i.e. $rm=0$ with $0\neq r \in R$ and $m\in I\otimes _RI$ implies $m=0$). 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.19}
+Let $I=(2,x)$ be the ideal generated by $2$ and $x$ in the ring $R-\Z[x]$ as in Exercise 17. Show that the nonzero element $2\otimes x-x\otimes 2$ in $I\otimes_R I$ is a torsion element. Show in fact that $2\otimes x - x\otimes 2$ is annihilated by both $2$ and $x$ and that the submodule of $I\otimes_R I$ generated by $2\otimes x - x\otimes 2$ is isomorphic to $R/I$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.20}
+Let $I=(2,x)$ be the ideal generated by $2$ and $x$ in the ring $R=\Z[x]$. Show that the element $2\otimes 2 + x\otimes x$ in $I\otimes_RI$ is not a simple tensor, i.e. cannot be written as $a\otimes b$ for some $a,b\in I$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.21}
+Suppose $R$ is commutative and let $I$ and $J$ be ideals of $R$. 
+\begin{enumerate}
+\item[(a)] Show that there is a surjective $R$-module homomorphism from $I\otimes_R J$ to the product ideal $IJ$ mapping $I\otimes J$ to the element $ij$.
+\item[(b)] Give an example to show that the map in (a) need not be injective (cf. Exercise 17). 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.22}
+Suppose that $m$ is a left and a right $R$-module such that $rm=mr$ for all $r\in R$ and $m\in M$. Show that the elements $_1r_2$ and $r_2r_1$ act the same on $M$ for every $r_1,r_2\in R$. (This explains why the assumption that $R$ is commutative in the definition of an $R$-algebra is a fairly natural one.) 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.23}
+Verify the details that the multiplication in Proposition 19 makes $A\otimes_R B$ into an $R$-algebra.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.24}
+Prove that the extension of scalars from $\Z$ to the Gaussian integers $\Z[i]$ of the ring $\R$ is isomorphic to $\C$ as a ring:$\Z[i]\otimes_\Z\R\cong\C$ as rings. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.25}
+Let $R$ be a subring of the commutative ring $S$ and let $x$ be an indeterminate over $S$. Prove that $S[x]$ and $S\otimes_RR[x]$ are isomorphic as $S$-algebras.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.26}
+Let $S$ be a commutative ring containing $R$ (with $1_s = 1_R$) and let $x_1,\ldots,x_n$ be independent indeterminates over the ring $S$. Show that for every ideal $I$ in the polynomial ring $R[x_1,\ldots,x_n]$ that $S\otimes_R(R[x_1,\ldots,x_n]/I)\cong S[x_1,\ldots,x_n]/IS[x_1,\ldots,x_n]$. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.4.27}
+The next exercise shows the ring $C\otimes _R\C$ introduced at the end of this section is isomorphic to $\C\times \C$. One may also prove this via Exercise 26 and Proposition 16 in Section 9.5, since $\C\cong \R[x]/(x^2+1)$. The ring $C\times \C$ is also discussed in Exercise 23 of Section 1.\begin{enumerate}
+\item[(a)] Write down a formula for the multiplication of two elements $a\cdot 1 + b \cdot e_2+c\cdot e_3+d\cdot e_4$ and $a'\cdot 1 + b' \cdot e_2+c'\cdot e_3+d.\cdot e_4$ in the example $A=\C\otimes\R\C$ following Proposition 21 (where $1=1\otimes 1$ is the identity of $A$). 
+\item[(b)] Let $\epsilon_1=\frac{1}{2}(1\otimes 1+i\otimes i)$ and let $\epsilon_2=\frac{1}{2}(1\otimes 1-i\otimes i)$. Show that $\epsilon_1\epsilon_2 = 0$, $\epsilon_1+\epsilon_2=1$ and $\epsilon_j^2=\epsilon_j$ for $j=1,2$ ($\epsilon_1$ and $\epsilon_2$ are called \emph{orthogonal idempotents} in $A$). Deduce that $A$ is isomorphic as a ring to the direct product of two principal ideals:$ A\cong A\epsilon_1\times A\epsilon_2$ (cf. Exercise 1, Section 7.6). 
+\item[(c)] Prove that the map $\phi:\C\times \C \to \C\times\C$ by $\phi(z_1,z_2) = (z_1z_2,z_1\overline{z_2})$, where $\overline{z_2}$ denotes the complex conjugate of $z_2$, is an $\R$-bilinear map.
+\item[(d)] Let $\Phi$ be the $\R$-module homomorphism from $A$ to $\C\times \C$ obtained from $\phi$ in (c). Show that $\Phi(\epsilon_1) = (0,1)$ and $\Phi(\epsilon_2)=(1,0)$. Show also that $\Phi$ is $\C$-linear, where the action of $\C$ is on the left tensor factor in $A$ and on both factors in $\C\times\C$. Deduce that $\Phi$ is surjective. Show that $\Phi$ is a $\C$-algebra isomorphism. 
+ \end{enumerate} 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+\end{section}
+
+
+
+
+
+
+
+
+
+\begin{section}{Exact Sequences---Projective, Injective, and Flat Modules}
+
+\begin{problem}\label{ex:10.5.1}
+Suppose that \[\begin{CD}
+A @>\psi>> B @>\phi>>C\\
+@V\alpha VV @V\beta VV @V\gamma VV\\
+A' @>\psi'>> B' @>\phi'>>C'
+\end{CD}\]
+is a commutative diagram of groups and that the rows are exact. Prove that \begin{enumerate}
+\item[(a)] If $\phi$ and $\alpha$ are surjective, and $\beta$ is injective then $\gamma$ is injective. [If $c\in\ker \gamma$, show there is a $b\in B$ with $\phi(b)=c.$ Show that $\phi'(\beta(b)) = 0$ and deduce that $\beta(b)=\phi'(a')$ for some $a'\in A'$. Show that there is an $a\in A$ with $\alpha(a) = a'$ and that $\beta(\psi(a)) = \beta(b).$ Conclude that $b=\psi(a)$ and hence $c=\phi(b) = 0$.]
+\item[(b)] If $\phi',\alpha$ and $\gamma$ are injective, then $\beta$ is injective.
+\item[(c)] If $\phi,\alpha$ and $\gamma$ are surjective, then $\beta$ is surjective.
+\item[(d)] If $\beta$ is injective, $\alpha$ and $\phi$ are surjective, then $\gamma$ is injective.
+\item[(e)] If $\beta$ is surjective, $\gamma$ and $\psi'$ are injective, then $\alpha$ is surjective.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.2}
+Suppose that \[\begin{CD}
+A @>>> B @>>>C@>>>D\\
+@V\alpha VV @V\beta VV @V\gamma VV@V\delta  VV\\
+A' @>'>> B' @>>>C'@>>>D'
+\end{CD}\]
+is a commutative diagram of groups and that the rows are exact. Prove that \begin{enumerate}
+\item[(a)] If $\alpha$ is surjective and $\beta,\delta$ are injective, then $\gamma$ is injective.
+\item[(b)] If $\delta$ is injective, and $\alpha,\gamma$ are surjective, then $\beta$ is surjective.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.3}
+Let $P_1$ and $P_2$ be $R$-modules. Prove that $P_1\oplus P_2$ is a projective $R$-module if and only if both $P_1$ and $P_2$ are projective.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.4}
+Let $Q_1$ and $Q_2$ be $R$-modules. Prove that $Q_1\oplus Q_2$ is an injective $R$-modules if and only if both $Q_1$ and $Q_2$ are injective.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.5}
+Let $A_1$ and $A_2$ be $R$-modules. Prove that $A_1\oplus A_2$is a flat $R$-modules if and only if both $A_1$ and $A_2$ are flat. More generally, prove that an arbitrary direct sum $\sum A_i$ of $R$-modules is flat if and only if each $A_i$ is flat. [Use the fact that tensor product sommutes with arbitrary direct sums.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.6}
+Prove that the following are equivalent for a ring $R$:\begin{itemize}
+\item[(i)] Every $R$-module is projective.
+\item[(ii)] Every $R$-module is injective.
+\end{itemize}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.7}
+Let $A$ be a nonzero finite abelian group.\begin{enumerate}
+\item[(a)] Prove that $A$ is not a projective $\Z$-module.
+\item[(b)] Prove that $A$ is not an injective $\Z$-module.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.8}
+Let $Q$ be a nonzero divisible $\Z$-module. Prove that $Q$ is not a projective $\Z$-module. Deduce that the rational numbers $\Q$ is not a projective $\Z$-module. [Show first that if $F$ is any free module then $\cap_{n=1}^\infty nF = 0$ (use a basis of $F$ to prove this). Now suppose to the contrary that $Q$ is projective and derive a contradiction from Proposition 30(4).]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.9}
+Assume $R$ is commutative with $1$. \begin{enumerate}
+\item[(a)] Prove that the tensor product of two free $R$-modules is free. [Use the fact that tensor products commute with arbitrary direct sums.]
+\item[(b)] Use (a) to prove that the tensor product of two projective $R$-modules is projective.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.10}
+Let $R$ and $W$ be rings with $1$ and let $M$ and $N$ be left $R$-modules. Assume also that $M$ is an $(R,S)$-bimodule.
+\begin{enumerate}
+\item[(a)] For $s\in S$ and for $\phi\in\Hom_R(M,N)$ define $(s\phi):M\to N$ by $(s\phi)(m) = \phi(ms)$. Prove that $s\phi$ is a homomorphism of left $R$-modules, and that this action of $S$ on $\Hom_R(M,N)$ makes it into a \emph{left} $S$-module.
+\item[(b)] Let $S=R$ and let $M=R$ (considered as an $(R,R)$-bimodule by left and right ring multiplication on itself). For each $n\in N$ define $\phi_n:R\to N$ by $\phi_n(r) = rn$, i.e. $\phi_n$ is the unique $R$-module homomorphism mapping $1_R$ to $n$. Show that $\phi_n\in \Hom_R(R,N)$. Use part (a) to show that the map $n\mapsto \phi_n$ is an isomorphism of left $R$-modules:$N\cong\Hom_R(R,N)$. 
+\item[(c)] Deduce that if $N$ is a free (respective, projective, injective, flat) left $R$-module, then $\Hom_R(R,N)$ is also a free (respective, projective, injective, flat) left $R$-module.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.11}
+Let $R$ and $W$ be rings with $1$ and let $M$ and $N$ be left $R$-modules. Assume also that $M$ is an $(R,S)$-bimodule.
+\begin{enumerate}
+\item[(a)] For $s\in S$ and for $\phi\in\Hom_R(M,N)$ define $(\phi s):M\to N$ by $(\phi s)(m) = \phi(m)s$. Prove that $s\phi$ is a homomorphism of left $R$-modules, and that this action of $S$ on $\Hom_R(M,N)$ makes it into a \emph{right} $S$-module. Deduce that $\Hom_R(M,R)$ is a right $R$-module, for any $R$-module $M$ --- called the \emph{dual module} to $M$.
+\item[(b)] Let $N=R$ be considered as an $(R,R)$ bimodule as usual. Under the action defined in part (a) show that the map $r\mapsto \phi_r$ is an isomorphism of right $R$-modules: $\Hom_R(R,R)\cong R$, where $\phi_r$ is the homomorphism that maps $1_R$ to $r$. Deduce that if $M$ is a finitely generated free left $R$-module, then $\Hom_R(M,R)$ is a free right $R$-module of the same rank. (cf. also Exercise 13).
+\item[(c)] Show that if $M$ is a finitely generated projective $R$-module then its dual module $\Hom_R(M,R)$ is also projective.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.12}
+Let $A$ be an $R$-module, let $I$ be any nonempty index set and for each $i\in I$ let $B_i$ be an $R$-module. Prove the following isomorphisms of abelian groups; when $R$ is commutative prove also that these are $R$-module isomorphisms. (Arbitrary direct sums and direct products of modules are introduced in Exercise 20 of Section 3.)
+\begin{enumerate}
+\item[(a)] $\Hom_R(\bigoplus_{i\in I}B_i,A)\cong\prod_{i\in I}\Hom_R(B_i,A)$
+\item[(b)] $\Hom_R(A,\prod_{i\in I}B_i)\cong\prod_{i\in I}\Hom_R(A,B_i).$
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.13}
+\begin{enumerate}
+\item[(a)] Show that the dual of the free $\Z$-module with countable basis is not free. [Use the preceding exercise and Exercise 24, Section 3.] (See also Exercise 5 in Section 11.3.)
+\item[(b)] Show that the dual of the free $\Z$-module with countable basis is not projective. [You may use the fact that any submodule of a free $\Z$-module is free.]
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.14}
+Let $\begin{CD}0@>>>L@>\psi>>M@>\phi>>N@>>>0\end{CD}$ be a sequence of $R$-modules.
+\begin{enumerate}
+\item[(a)] Prove that the associated sequence \[
+\begin{CD}0@>>>\Hom_R(D,L)@>\psi'>>\Hom_R(D,M)@>\phi'>>\Hom_R(D,N)@>>>0\end{CD}
+\]
+is a short exact sequence of abelian groups for all $R$-modules $D$ if and only if the original sequence is a split short exact sequence. [To show the sequence splits, take $D=N$ and show the lift of the identity map in $\Hom_R(N,N)$ to $\Hom_R(N,M)$ is a splitting homomorphism for $\phi$.]
+\item[(b)] Prove that the associated sequence \[
+\begin{CD}0@>>>\Hom_R(N,D)@>\phi'>>\Hom_R(M,D)@>\psi'>>\Hom_R(L,D)@>>>0\end{CD}
+\]
+is a short exact sequence of abelian groups for all $R$-modules $D$ if and only if the original sequence is a split short exact sequence. 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.15}
+Let $M$ be a left $\Z$-module and let $R$ be a ring with 1. 
+\begin{enumerate}
+\item[(a)] Show that $\Hom_\Z(R,M)$ is a left $R$-module under the action $(r\phi)(r') = \phi(r'r)$ (see Exercise 10). 
+\item[(b)] Suppose that $\begin{CD}0@>>>A@>\psi>>B\end{CD}$ is an exact sequence of $R$-modules. Prove that if every $\Z$-module homomorphism $f$ from $A$ to $M$ lifts to a $\Z$-module homomorphism $F$ from $B$ to $M$ with $f=F\circ\psi$, then every $R$-module homomorphism $f'$ from $A$ to $\Hom_Z(R,M)$ lifts to an $R$-module homomorphism $F'$ from $B$ to $\Hom_\Z(R,M)$ with $f' = F'\circ \psi$. [Given $f'$, show that $f(a) = f'(a)(1_R)$ defines a $\Z$-module homomorphism of $A$ to $M$. If $F$ is the associated lift of $f$ to $B$, show that $F'(b)(r) = F(rb)$ defines an $R$-modules homomorphism from $B$ to $\Hom_Z(R,M)$ that lifts $f'$.]
+\item[(c)] Prove that if $Q$ is an injective $\Z$-module then $\Hom_\Z(R,Q)$ is an injective $R$-module. 
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.16}
+This exercise proves Theorem 38 that every left $R$-module $M$ is contained in an injective left $R$-module.
+\begin{enumerate}
+\item[(a)] Show that $M$ is contained in an injective $\Z$-module $Q$. [$M$ is a $\Z$-module---use Corollary 37.]
+\item[(b)] Show that $\Hom_R(R,M)\subseteq\Hom_\Z(R,M)\subseteq \Hom_\Z(R,Q)$.
+\item[(c)]  Use the $R$-module isomorphism $M\cong\Hom_R(R,M)$ (Exercise 10) and the previous exercise to conclude that $M$ is contained in an injective $R$-module.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.17}
+This exercise completes the proof of Proposition 34. Suppose that $Q$ is an $R$-module with the property that every short exact sequence $\begin{CD}0@>>>Q@>>>M_1@>>>N@>>>0\end{CD}$ splits and suppose that the sequence $0@>>>L@>\psi>>M$ is exact. Prove that every $R$-module homomorphism $f$ from $L$ to $Q$ can be lifted to an $R$-module homomorphism $F$ from $M$ to $Q$ with $f=F\circ\psi$. [By the previous exercise, $Q$ is contained in an injective $R$-module. Use the splitting property together with Exercise 4 (noting that Exercise 4 can be proved using (2) in Proposition 34 as the definition of an injective module).] 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.18}
+Prove that the injective hull of the $\Z$-module $\Z$ is $\Q$ [Let $H$ be the injective hull of $\Z$ and argue that $\Q$ contains an isomorphic copy of $H$. Use the divisibility of $H$ to show that $1/n\in H$ for all nonzero integers $n$, and deduce that $H=\Q$.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.19}
+If $F$ is a field, prove that the injective hull of $F$ is $F$.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.20}
+Prove that the polynomial ring $R[x]$ with indeterminate $x$ over the commutative ring $R$ is a flat $R$-module.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.21}
+Let $R$ and $S$ be rings with 1 and suppose $M$ is a right $R$-module, and $N$ is an $(R,S)$-bimodule. If $M$ is flat over $R$ and $N$ is flat as an $S$-module prove that $M\otimes_R N$ is flat as a right $S$-module. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.22}
+Suppose that $R$ is a commutative ring and that $M$ and $N$ are flat $R$-modules. Prove that $M\otimes_R N$ is a flat $R$-module. [Use the previous exercise.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.23}
+Prove that the (right) module $M\otimes_R S$ obtained by changing the base from the ring $R$ to the ring $S$ (by some homomorphism $f:R\to S$ with $f(1_R) = 1_S$ cf. Example 6 following Corollary 12 in Section 4) of the flat (right) $R$-module $M$ is a flat $S$-module.
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.24}
+Prove that $A$ is a flat $R$-module if and only if for any left $R$-modules $L$ and $M$ where $L$ is \emph{finitely egenerated}, then $\psi:L\to M$ is injective implies that laso $1\otimes \psi:A\otimes_RL\to A\otimes_RM$ is injective. [Use the techniques if the proof of corollary 42.]
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.25}
+\emph(A Flatness Criterion) Parts (a)-(c) of this exercise prove that $A$ is a flat $R$-module if and only if for every finitely generated ideal $I$ of $R$, the map from $A\otimes_RI\to A\otimes_RR\cong A$ induced by the inclusion $I\subseteq R$ is again injective (or equivalently, $A\otimes_RI\cong AI\subseteq A$). \begin{enumerate}
+\item[(a)] Prove that if $A$ is flat then $A\otimes_RI\to A\otimes_RR$ is injective.
+\item[(b)] If $A\otimes_RI\to A\otimes_RR$ is injective for every finitely generated ideal $I$, prove that $A\otimes_RI\to A\otimes_RR$ is injective for every ideal $I$. Show that if $K$ is any submodule of a finitely generated free module $F$ then $A\otimes_RK\to A\otimes_RF$ is injective. Show that the same is true for any free module $F$. [Cf. the proof of Corollary 42.]
+\item[(c)]Under the assumption in (b), suppose $L$ and $M$ are $R$-modules and $\begin{CD}L@>\psi>>M\end{CD}$ is injective. Prove that $\begin{CD}A\otimes_RL@>1\otimes\psi>>A\otimes_RM\end{CD}$ is injective and conclude that $A$ is flat. [Write $M$ as a quotient of the free module $F$, giving a short exact sequence\[
+\begin{CD}0@>>>K@>>>F@>f>>M@>>>0.\end{CD}
+\]
+Show that if $J=f^{-1}(\psi(L))$ and $\iota:J\to F$ is the natural injection, then the diagram\[
+\begin{CD}
+0@>>>K@>>>J@>>>L@>>>0\\
+@.@VidVV@V\iota VV @V\psi VV\\
+0@>>>K@>>>F@>>>M@>>>0
+\end{CD}
+\]
+is commutative with exact rows. Show that the induced diagram\[
+\begin{CD}
+A\otimes_R K@>>>A\otimes_R J@>>>A\otimes_R L@>>>0\\
+@VidVV@V1\otimes \iota VV @V1\otimes\psi VV\\
+A\otimes_R K@>>>A\otimes_R F@>>>A\otimes_R M@>>>0
+\end{CD}
+\]
+is commutative with exact rows. Use (b) to show that $1\otimes \iota$ is injective, then use Exercise 1 to conclude that $1\otimes \psi $ is injective.]
+\item[(d)]  \emph(A Flatness Criterion for quotients) Suppose $A=F/K$ where $F$ is flat (e.g., if $F$ is free) and $K$ is an $R$-submodule of $F$. Prove that $A$ is flat if and only if $FI\cap K = KI$ for every finitely generated ideal $I$ of $R$. [Use (a) to prove $F\otimes_R I\cong FI$ and observe the image of $K\otimes_RI$ is $KI$; tensor the exact sequence $0\to K\to F\to A\to0$ with $I$ to prove that $A\otimes_RI\cong FI/KI$, and apply the flatness criterion.]
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.26}
+Suppose $R$ is a PID. This exercise proves that $A$ is a flat $R$-module if and only if $A$ is a torsion free $R$-module (i.e., if $a\in A$ is nonzero and $r\in R$, then $ra=0$ implies $r=0$). \begin{enumerate}
+\item[(a)] Suppose that $A$ is flat and for fixed $r\in R$ consider the map $\psi_r:R\to R$ defined by multiplication by $r$: $\psi_r(x)=rx$. If $r$ is nonzero show that $\psi_r$ is an injection. Conclude from the flatness of $A$ that the map from $A$ to $A$ defined by mapping $a$ to $ra$ is injective and that $A$ is torsion free.
+\item[(b)] Suppose that $A$ is torsion free. If $I$ is a nonzero ideal of $R$, then $I = rR$ for some nonzero $r\in R$. Show that the map $\psi_r$ in (a) induces an isomorphism $R\cong I$ of $R$-modules and that the composite $\begin{CD}R@>\psi>>I@>\iota>>R\end{CD}$ of $\psi_r$ with the inclusion $\iota:I\subseteq R$ is multiplication by $r$. Prove that the composite $\begin{CD} A\otimes_R R@>1\otimes\psi_r>>A\otimes_RI@>1\otimes\iota>>A\otimes_RR\end{CD}$ corresponds to the map $a\mapsto ra$ under the identification $A\otimes_RR = A$ and that this composite is injective since $A$ is torsion free. Show that $1\otimes \psi_r$ is an isomorphism and deduce that $1\otimes i$ is injective. Use the previous exercise to conclude that $A$ is flat.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.27}
+Let $M,A$ and $B$ be $R$-modules.\begin{enumerate}
+\item[(a)] Suppose $f:A\to M$ and $g:B\to M$ are $R$-module homomorphisms. Prove that $X=\{(a,b)\mid a\in A,b\in B\text{ with } f(a) = g(b)\}$ is an $R$-submodule of the direct sum $A\oplus B$ (called the \emph{pullback} or \emph{fiber product} of $f$ and $g$) and that there is a commutative diagram \[
+\begin{CD}
+X@>\pi_2>>B\\
+@V\pi_1VV @VgVV\\
+A@>f>>M
+\end{CD}
+\]
+where $\pi_1$ and $\pi_2$ are the natural projections onto the first and second components.
+
+\item[(b)] Suppose $f':M\to A$ and $g':M\to B$ are $R$-module homomorphisms. Prove that the quotient $Y$ of $A\oplus B$ by $ \{(f'(m), -g'(m))\mid m\in M\}$ is an $R$-module (called the \emph{pushout} or \emph{fiber sum} of $f'$ and $g'$) and that there is a commutative diagram \[
+\begin{CD}
+M@>g'>>B\\
+@Vf'VV @V\pi_2'VV\\
+A@>\pi_1'>>X
+\end{CD}
+\]
+where $\phi_1'$ and $\phi_2'$ are the natural maps to the quotient induced by the maps into the first and second components.
+\end{enumerate}
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\begin{problem}\label{ex:10.5.28}
+\begin{enumerate}
+\item[(a)]\emph{(Schanuel's Lemma)} If $\begin{CD}0@>>>K@>>>P@>\phi>>M@>>>0\end{CD}$ and $\begin{CD}0@>>>K'@>>>P'@>\phi'>>M@>>>0\end{CD}$ are exact sequences of $R$-modules where $P$ and $p'$ are projective, prove that $P\oplus K'\cong P'\oplus K$ as $R$-modules. [Show that there is an exact sequence $\begin{CD}0@>>>\ker \phi @>>>X@>\pi>>P@>>>0\end{CD}$ with $\ker\pi \cong K'$, where $X$ is the fiber product of $\phi$ and $\phi'$ as in the previous exercise. Deduce that $X\cong P\oplus K'$. Show similarly that $X\cong P'\oplus K$.]
+
+\item[(b)] If $\begin{CD}0@>>>M@>>>Q@>\psi>>L@>>>0\end{CD}$ and $\begin{CD}0@>>>M@>>>Q'@>\psi'>>L'@>>>0\end{CD}$ are exact sequences of $R$-modules where $Q$ and $Q'$ are injective, prove that $Q\oplus L' \cong Q'\oplus L$ as $R$-modules.
+\end{enumerate}
+
+The $R$ modules $M$ and $N$ are said to be \emph{projectively equivalent} if $M\oplus P\cong N\oplus P'$ for some projective modules $P,P'$. Simiarly, $M$ and $N$ are injective equivalent if $M\oplus Q\cong N\oplus Q'$ for some injective modules $Q,Q'$. The previous exercise shows $K$ and $K'$ are projectively equivalent and $L$ and $L'$ are injectively equivalent. 
+\end{problem}
+\begin{solution}TODO
+
+\end{solution}\oneperpage
+
+
+
+\end{section}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{chapter}
