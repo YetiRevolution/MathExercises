@@ -406,7 +406,13 @@ In these exercises $R$ is a ring with 1 and $M$ is a left $R$-module.
 \begin{problem}\label{ex:10.2.1}
 Use the submodule criterion to show that kernels and images of $R$-module homomorphisms are submodules.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}Kernels and images of $R$-module homomorphisms always contain zero by virtue of being kernels and images of the underlying group homomorphisms. Thus they are nonempty. Let $\phi:N\to M$ be an $R$-module homomorphism. We will check the second condition of the submodule criterion for $\ker \phi$ and $\phi(N)$. Letting $x_1,x_2\in \ker \phi$ and $r\in R$ we notice that \[
+\phi(x_1+rx_2) = \phi(x_1)+r\phi(x_2) = 0+r0 = 0
+\]
+and so $x_1+rx_2\in \ker \phi$. This proves that $\ker\phi$ is a submodule of $N$. Letting $\phi(n_1)$ and $\phi(n_2)$ be arbitrary elements of $\phi(N)$ and letting $r\in R$ we have \[
+\phi(n_1) + r\phi(n_2) = \phi(n_1+rn_2) \in \phi(N).
+\]
+Hence $\phi(N)$ also satisfies the second condition of the submodule criterion and is a submodule.
 
 \end{solution}\oneperpage
 
@@ -415,7 +421,19 @@ Use the submodule criterion to show that kernels and images of $R$-module homomo
 \begin{problem}\label{ex:10.2.2}
 Show that the relation ``is $R$-module isomorphic to'' is an equivalence relation on any set of $R$-modules.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}We verify each property of an equivalence relation directly. \begin{itemize}
+\item \emph{Reflexivity:} Any $R$-module is isomorphic to itself via the identity map.
+\item \emph{Symmetry:} Let $\phi:N\to M$ be an isomorphism of $R$-modules. We claim that the map $\phi^{-1}$ is also an $R$-module isomorphism. We know it is a group isomorphism since $\phi$ is a group isomorphism, and so all we have to verify is that it preserves the action of $R$. Let $m\in M$ and $r\in R$. We know $m=\phi(n)$ for some $n\in N$ and since $\phi$ is an $R$-module isomorphism we also have $\phi(rn) = r\phi(n) = rm$. Putting this together, we have\[
+\phi^{-1}(rm) = \phi^{-1}(\phi(rn)) = rn = r\phi^{-1}(m)
+\]
+and so $\phi^{-1}$ is a homomorphism of $R$-modules. This proves that $M$ is $R$-module isomorphic to $N$.
+\item \emph{Transitivity:} Let \[
+\begin{CD} N@>\phi>> M @>\psi>> L\end{CD}\]
+be a sequence of $R$-module isomorphisms. We claim that $\psi\circ\phi$ is an $R$-module isomorphism from $N$ to $L$. It is a group isomorphism by virtue of $\phi$ and $\psi$ being group isomorphisms, so we need only verify that the action of $R$ is preserved. Given $r\in R$ and $n\in N$ we have directly that \[
+\psi(\phi(rn)) = \psi(r\phi(n)) = r\psi(\phi(n))
+\]
+by virtue of $\phi$ and $\psi$ being $R$-module isomorphisms. This proves that $N$ is $R$-module isomorphic to $L$, as desired. We conclude that ``is $R$-module isomorphic to'' is an equivalence relation. 
+\end{itemize}
 
 \end{solution}\oneperpage
 
@@ -424,17 +442,39 @@ Show that the relation ``is $R$-module isomorphic to'' is an equivalence relatio
 \begin{problem}\label{ex:10.2.3}
 Give an explicit example of a map from one $R$-module to another which is a group homomorphism but not an $R$-module homomorphism.
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+Natural examples occur whenever a module $M$ has two distinct $R$-module structures on it. In this case the identity map from $M$ to $M$ is a group homomorphism, but not an $R$-module homomorphism. Some examples of modules $M$ which can have distinct structures are described below. \begin{itemize}
+\item The algebra $A = \C\times\C$ described in 10.1.23 as a module over $\C$.
+\item A vector space as an $F[x]$ module, where the action of $x$ can be various linear transformations.
+\item  Example 2 on page 346 also works: the map $x\mapsto x^2$ in $M = F[x]$ is never an $F[x]$-module homomorphism. Indeed, one can generalize this by sending $\phi:x\mapsto f(x)$ for any $f(x)\neq x$. This is a group homomorphism but not an $F[x]$ module homomorphism since we would have $f(x) = \phi(x) = \phi(x\cdot 1) = x\phi(1) = x$. Perhaps most generally one can consider a ring with unity and a nontrivial endomorphism. This endomorphism serves as a group homomorphism that is not an $R$-module homomorphism.
+\end{itemize}
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.2.4}
-Let $A$ be any $\Z$-module, let $a$ be any element of $A$ and let $n$ be a positive integer. Prove that the map $\phi_a:\Z/n\Z\to A$ given by $\phi_a(\overline{k}) = ka$ is a well defined $\Z$-module homomorphism if and only if $na=0$. Prove that $\Hom_\Z(\Z/n\Z, A)\cong A_n$ where $A_n=\{a\in A \mid na=0\}$ (so $A_n$ is the annihilator of $A$ in the ideal $(n)$ of $\Z$ --- cf. Exercise 10, Section 1).
+Let $A$ be any $\Z$-module, let $a$ be any element of $A$ and let $n$ be a positive integer. Prove that the map $\phi_a:\Z/n\Z\to A$ given by $\phi_a(\overline{k}) = ka$ is a well defined $\Z$-module homomorphism if and only if $na=0$. Prove that $\Hom_\Z(\Z/n\Z, A)\cong A_n$ where $A_n=\{a\in A \mid na=0\}$ (so $A_n$ is the annihilator in $A$ of the ideal $(n)$ of $\Z$ --- cf. Exercise 10, Section 1).
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+We begin by proving that $\phi_a$ is a well defined $\Z$-module homomorphism if and only if $na=0$.
 
+$(\Rightarrow)$ Suppose $\phi_a$ is a well defined $\Z$-mdoule homomorphism. Then we have that $na = \phi_a(\overline{n}) = \phi_a(0)$ which must be zero since $\phi_a$ is a homomorphism of groups.
+
+$(\Leftarrow)$ Suppose $na=0$. To show $\phi_a$ is well defined we need to show that $\phi_a(\overline{k})$ does not depend on our choice of representative for $\overline{k}$. Letting $k+bn$ be an arbitrary representative of $\overline{k}$ we have that \[
+\phi_a(\overline{k+bn}) = (k+bn)a = ka + bna = ka  + b(na) = ka+b0 = ka 
+\]
+and so the map is well defined. To prove it is a group homomorphism let $\overline{k_1},\overline{k_2}\in \Z/n\Z$. Then we have \[
+\phi_a(\overline{k_1}+\overline{k_2}) = (\overline{k_1}+\overline{k_2})a = \overline{k_1}a+\overline{k_2}a = \phi(\overline{k_1})+\phi(\overline{k_2}).
+\]
+To see it is a $\Z$-module homomorphism, let $z\in \Z$ and observe that \[
+\phi_a(z\overline{k}) = \phi_a(\overline{zk}) = \overline{zk}a = z\overline{k}a = z\phi_a(\overline{k})
+\]
+where the second to last equality follows from the fact that $z$ acts the same on multiples of $a$ as any $z'$ congruent to $z$ mod $n$. This shows that $\phi_a$ is a homomorphism of $\Z$-modules. 
+
+To prove that $\Hom_\Z(\Z/n\Z, A) \cong A_n$ we show that each homomorphism $\phi$ from $\Z/n\Z$ to $A$ is uniquely determined by $\phi(1)$ and $\phi(1)\in A_n$. In fact, we show that all $\phi\in \Hom_\Z(\Z/n\Z, A)$ are of the form $\phi_a$ for some $a\in A_n$. Given an homomorphism $\phi:\Z/n\Z\to A$ consider $\phi(1) = a$. We know that $\phi(1)\in A_n$ since \[
+na = n\phi(1) = \phi(n) = \phi(0) = 0.
+\]
+Extending $\phi$ to the rest of $\Z/n\Z$ we see that necessarily $\phi = \phi_a$. By the result proven earlier in the problem, we conclude that every homomorphism in $\Hom_\Z(\Z/n\Z,A)$ is of the form $\phi_a$ for $a\in A_n$. To prove that $\Hom_\Z(\Z/n\Z,A)$ is isomorphic to $A_n$ as a module, notice that by the properties of homomorphisms we have $\phi_a+\phi_b = \phi_{a+b}$ and $z\phi_a = \phi_za$ and also $\phi_a = \phi_b$ if and only if $a=b$. Hence the map $\phi_a\mapsto a$ is an isomorphism of $\Z$-modules and we conclude the desired result.
 \end{solution}\oneperpage
 
 
@@ -442,8 +482,8 @@ Let $A$ be any $\Z$-module, let $a$ be any element of $A$ and let $n$ be a posit
 \begin{problem}\label{ex:10.2.5}
 Exhibit all $\Z$-module homomorphisms from $\Z/30\Z$ to $\Z/21\Z$. 
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+By the previous exercise we know that $\Hom_\Z(\Z/30\Z,\Z/21\Z)$ consists of maps $\phi_a$ where $a\in \Z/21\Z$ is annihilated by $30\Z$. The elements in $\Z/21\Z$ annihilated by 30 are exactly those which are multiples of 7. Hence the only maps are the zero map, $a\mapsto 7a$ and $a\mapsto 14a$. 
 \end{solution}\oneperpage
 
 
@@ -451,26 +491,29 @@ Exhibit all $\Z$-module homomorphisms from $\Z/30\Z$ to $\Z/21\Z$.
 \begin{problem}\label{ex:10.2.6}
 Prove that $\Hom_\Z(\Z/n\Z, \Z/m\Z) \cong \Z/(n,m)\Z$.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+By 10.2.4 we have that $\Hom_\Z(\Z/n\Z, \Z/m\Z)$ is isomorphic to the annihilator of $n\Z$ in $\Z/m\Z$. This annihilator will consist of exactly the $a\in\Z/m\Z$ for which $na$ is a multiple of $m$. Let $d$ be the greatest common divisor of $n$ and $m$. Then this annihilator can be easily described as the cyclic module generated by $m/d$ in $\Z/m\Z$. Indeed, $na$ is a multiple of $m$ if and only if $a$ is a multiple of $m/d$. The cyclic module generated by $m/d$ has $d$ elements, and hence is isomorphic to $\Z/d\Z$. This proves the result.
 
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.2.7}
-Let $z$ be a fixed element of the center of $R$. Prove that the map $m\mapsto zm$ is an $R$-module homomorphism from $M$ to itself. Show that for a commutative ring $R$ the map from $R$ to $\End_R(M)$ given by $r\mapsto RI$ is a ring homomorphism (where $I$ is the identity endomorphism).
+Let $z$ be a fixed element of the center of $R$. Prove that the map $m\mapsto zm$ is an $R$-module homomorphism from $M$ to itself. Show that for a commutative ring $R$ the map from $R$ to $\End_R(M)$ given by $r\mapsto rI$ is a ring homomorphism (where $I$ is the identity endomorphism).
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+This is a group homomorphism since $z(m_1+m_2) = zm_1 + zm_2$ by the module axioms. Since $z$ is in the center of $r$ we also have $r(zm) = z(rm)$ for all $r\in R$ and so this map also respects the $R$-module structure. 
 
+Let $\phi$ denote the map $r\mapsto rI$. Then the ring homomorphism conditions are easily verified: $\phi(r_1+r_2) = (r_1+r_2)I = r_1I+r_2I = \phi(r_1) + \phi(r_2)$, and $\phi(r_1r_2) = r_1r_2I = r_1I r_2I = \phi(r_1)\phi(r_2)$. This proves the result.
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.2.8}
-Let $\phi:M\to N$ be an $R$-module homomorphism. Prove that $\phi(\Tor(M)) \subseteq \Tor(n)$ (cf. Exercise 8 in Section 1). 
+Let $\phi:M\to N$ be an $R$-module homomorphism. Prove that $\phi(\Tor(M)) \subseteq \Tor(N)$ (cf. Exercise 8 in Section 1). 
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+Let $m\in \Tor(M)$ and $r\in R$ be nonzero so that $rm=0$. Then $r\phi(m) = \phi(rm) = \phi(0) = 0$ and so $\phi(m)\in \Tor(N)$. This proves the result.
 \end{solution}\oneperpage
 
 
@@ -478,8 +521,17 @@ Let $\phi:M\to N$ be an $R$-module homomorphism. Prove that $\phi(\Tor(M)) \subs
 \begin{problem}\label{ex:10.2.9}
 Let $R$ be a commutative ring. Prove that $\Hom_R(R,M)$ and $M$ are isomorphic as left $R$-modules. [Show that each element of $\Hom_R(R,M)$ is determined by its value on the identity of $R$.]
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+Let $\phi\in \Hom_R(R,M)$ and let $r\in R$. We will show that $\phi(r)$ can be expressed in terms of $\phi(1)$. Notice that \[
+\phi(r) = \phi(r\cdot 1) = r\phi(1)
+\]
+by definition of being an $R$-module homomorphism. Hence each $\phi$ can be expressed as $\phi_m$ for $m\in M$ where $\phi_m(r) = rm$. We claim that the map $m\mapsto \phi_m$ is a homomorphism of the $R$-modules $M$ and $\Hom_R(R,M)$. 
 
+First, note that this map is injective since $\phi_{m_1} = \phi_{m_2}$ means that $m_1 = \phi_{m_1}(1) = \phi_{m_2}(1) = m_2$. Furthermore it is surjective since every homomorphism is uniquely determined by its value on 1 and can be written as $\phi_m$. This map is also a group homomorphism since \[
+\phi_{m_1+m_2}(s)  = s(m_1+m_2) = sm_1+sm_2 = \phi_{m_1}(s) + \phi_{m_2}(s)
+\] for all $s\in R$ and hence $\phi_{m_1+m_2} = \phi_{m_1} + \phi_{m_2}$. To show this map respects the $R$-module structure, let $r\in R$ and observe that \[
+r\phi_m(s) =rsm = s(rm) = \phi_{rm}(s)\]
+for all $s\in R$, and so $r\phi_m = \phi_{rm}$. We conclude  that $m\mapsto \phi_m$ is an $R$-module isomorphism as desired.
 \end{solution}\oneperpage
 
 
@@ -487,8 +539,8 @@ Let $R$ be a commutative ring. Prove that $\Hom_R(R,M)$ and $M$ are isomorphic a
 \begin{problem}\label{ex:10.2.10}
 Let $R$ be a commutative ring. Prove that $\Hom_R(R,R)$ and $R$ are isomorphic as rings.
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+Consider the map $r\mapsto rI$ where $I$ is the identity map on $R$. By 10.2.7 this is a homomorphism from $R$ to $\End_R(R) = \Hom_R(R,R)$. But this is also the exact map described in the proof of 10.2.9. In particular, this is an isomorphism of the $R$-module $\Hom_R(R,R)$ with the $R$-module $R$. We conclude that this map is bijective, and by virtue of being a ring homomorphism it must be a ring isomorphism. This proves the result. 
 \end{solution}\oneperpage
 
 
@@ -498,8 +550,19 @@ Let $A_1,A_2,\ldots, A_n$ be $R$-modules and let $B_i$ be a submodule of $A_i$ f
 (A_1\times\cdots \times A_n)/(B_1\times \cdots \times B_n) \cong (A_1/B_1)\times \cdots \times (A_n/B_n).
 \] [Recall Exercise 14 in Section 5.1.]
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+Consider the map $\phi: A_1\times\cdots \times A_n \to (A_1/B_1)\times \cdots \times (A_n/B_n)$ defined by \[
+\phi(a_1,a_2,\ldots, a_n) = (a_1+B_1, a_2+B_2,\ldots, a_n+B_n).
+\]
+Note that this is a homomorphism of $R$-modules since it is $R$-linear in each coordinate. Indeed, \[
+a_i + ra_i' + B_i = (a_i+B_i) + r(a_i'+B_i)
+\]
+by definition of the quotient module $A_i/B_i$. Then consider the kernel of this map. If $(a_1,\ldots,a_n)\in \ker\phi$ we must have $a_i + B_i = 0+B_i$ for all $i$. That is, we must have $a_i\in B_i$ and in particular $(a_1,\ldots,a_n)\in B_1\times\cdots\times B_n$. This condition is obviously necessary and sufficient to be in the kernel, and so the kernel is  $B_1\times\cdots\times B_n$. Also note that the map is surjective, with a preimage of $(a_1+B_1,\ldots, a_n+B_n)$ being simply $(a_1,\ldots, a_n)$. By the first isomorphism theorem we conclude that \begin{align*}
+(A_1\times\cdots \times A_n)/(B_1\times \cdots \times B_n) &= (A_1\times\cdots \times A_n)/\ker\phi \\
+& \cong \phi(A_1\times\cdots \times A_n)\\
+& = (A_1/B_1)\times \cdots \times (A_n/B_n)
+\end{align*}
+which proves the result.
 \end{solution}\oneperpage
 
 
@@ -510,8 +573,13 @@ R^n/IR^n \cong R/IR\times\cdots\times R/IR \quad \text{($n$ times)}
 \]
 where $IR^n$ is defined as in Exercise 5 of Section 1. [Use the preceding exercise.]
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+By definition $R^n = R\times \cdots\times R$ where the product is taken $n$ times. Thus we only need to show that $IR^n = (IR)^n$, and the result will follow immediately from the previous problem. To prove this we show containment in both directions. Elements of $IR^n$ are of the form $a(r_1,\ldots, r_n) = (ar_1,\ldots, ar_n)$ where $a\in I$. Such elements are clearly in $(IR)^n$ since elements in $(IR)^n$ have the form $(a_1r_1,\ldots, a_nr_n)$ for $a_i\in I$. Thus we have $IR^n\subseteq (IR)^n$ immediately.
 
+To show that $(IR)^n\subseteq IR^n$ consider an arbitrary element $(a_1r_1,\ldots, a_nr_n)\in (IR)^n$. Notice that the tuple $v_i = (0,\ldots, a_ir_i,\ldots, 0)$ which is zero in all coordinates but the $i$-th is in $IR^n$ since it is just $a_i(0,\ldots, a_i,\ldots, 0)$. But $IR^n$ is closed under finite sums, and so we can write \[
+(a_1r_1,\ldots,a_nr_n) = \sum_{i=1}^n v_i  \in IR^n.
+\]
+This proves that $(IR)^n\subseteq IR^n$, and so we conclude the desired result. As an interesting aside, I believe this also holds when the product is infinite since we only allow finitely many nonzero coordinates.
 \end{solution}\oneperpage
 
 
@@ -519,7 +587,31 @@ where $IR^n$ is defined as in Exercise 5 of Section 1. [Use the preceding exerci
 \begin{problem}\label{ex:10.2.13}
 Let $I$ be a nilpotent ideal in a commutative ring $R$ (cf. Exercise 37, 7.3), let $M$ and $N$ be $R$-modules and let $\phi:M\to N$ be an $R$-module homomorphism. Show that if the induced map $\overline{\phi}:M/IM \to N/IN$ is surjective, then $\phi$ is surjective.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+\emph{Note: I refered to \url{https://crazyproject.wordpress.com/aadf/\#df-10} for the solution to this problem. Wrote my own version of the solution however.}\\\\
+We will first prove that $N = \phi(M) + I^kN$ for all $k$, independent of the fact that $I$ is nilpotent. Consider the following diagram: \[
+\begin{CD}
+M @>\phi>> N\\
+@V\pi_MVV @VV\pi_NV\\
+M/IM @>\overline{\phi}>> N/IN
+\end{CD}
+\]
+Above we have $\pi_M$ and $\pi_N$ as projection mod $IM$ and $IN$ respectively. This diagram commutes by virtue of $\overline{\phi}$ being the induced map. We begin by showing that $N = \phi(M) + IN$. Notice that $N$ is clearly the preimage of $N/IN$ under $\pi_N$. Also $N/IN = \overline{\phi}(M/IM)$ and so any $n+IN\in N/IN$ can be written as $\phi(m) + IN$ for some $m\in M$. This implies that the preimage of $N/IN$ under $\pi_N$ will be $\phi(M) + IN$. Indeed, $\pi_N(n)  = \phi(m)+IN$ implies that $n$ is the sum of something in $\phi(M)$ and the kernel of $\pi_N$ which is $IN$. So far we have shown that $N = \phi(M) + IN$. 
+
+To prove that $N = \phi(M) + I^kN$ we use induction on $k$, where we have just proven the base case. For the inductive step, we have\[
+N = \phi(M) + I^kN = \phi(M) + I^k(\phi(M) + IN) = \phi(M) + I^k\phi(M) + I^{k+1}N = \phi(M) + I^{k+1}N
+\]
+where the last equality follows from the fact that $I^k\phi(M) \subseteq \phi(M)$. By induction we conclude that $N = \phi(M) + I^kN$ for all $k$. Taking $k$ large enough we have $I^k = 0$ and so $\phi(M) = N$ as desired. 
+
+It is illustrative to see the equality $N = \phi(M) + I^kN$ for some non-nilpotent ideal. For an example, we take $R = M = N = \Z$. Let $\phi:\Z\to\Z$ be the doubling map (i.e. $\phi(z) = 2z$), which is indeed a homomorphism of $\Z$ modules since it is a homomorphism of abelian groups. Notice that it is not surjective. For our ideal $I$ we choose  $3\Z$. Then our diagram of modules becomes \[
+\begin{CD}
+\Z @>\text{$\phi$ (doubling)}>> \Z\\
+@V\pi VV @VV\pi V\\
+\Z/3\Z @>\text{$\overline{\phi}$ (doubling)}>> \Z/3\Z
+\end{CD}
+\]
+Now, the induced map is surjective since we have $0\mapsto 0$, $1\mapsto 2$ and $2\mapsto 1$. Our result states that $\Z = \phi(\Z) + 3^k\Z$ for all $k$. Since $\phi(\Z) = 2\Z$ and $2\Z$ and $3^k\Z$ are always comaximal ideals, we see that the result holds. 
+
 
 \end{solution}\oneperpage
 
@@ -527,11 +619,37 @@ Let $I$ be a nilpotent ideal in a commutative ring $R$ (cf. Exercise 37, 7.3), l
 
 \begin{problem}\label{ex:10.2.14}
 Let $R=\Z[x]$ be the ring of polynomials in $x$ and let $A = \Z[t_1,t_2,\ldots]$ be the ring of polynomials in the independent indeterminates $r_1,r_2,\ldots$. Define an action of $R$ on $A$ as follows: 1) let $1\in R$ act on $A$ as the identity, 2) for $n\ge 1$ let $x^n\circ 1 = t_n$, let $x^n\circ t_i = t_{n+i}$ for $i=1,2\ldots$, and let $x^n$ act as $0$ on monomials in $A$ of (total) degree at least two, and 3) extend $\Z$-linearly, i.e., so that the module axioms 2(a) and 2(c) are satisfied. \begin{enumerate}
-\item[(a)] Show that $x^{p+1}\circ t_i = x^p\circ(x^q\circ t_i) = t_{p+q+i}$ and use this show that under this action the ring $A$ is a (unital) $R$-module.
+\item[(a)] Show that $x^{p+q}\circ t_i = x^p\circ(x^q\circ t_i) = t_{p+q+i}$ and use this show that under this action the ring $A$ is a (unital) $R$-module.
 \item[(b)] Show that the map $\phi:R\to A$ defined by $\phi(r) = r\circ 1_A$ is an $R$-module homomorphism of the ring $R$ into the ring $A$ mapping $1_R$ to $1_A$, but not a ring homomorphism from $R$ to $A$.
 \end{enumerate}
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+(a)\\
+We can compute directly that \begin{align*}
+x^{p+q}\circ t_i = t_{p+q+i} = x^p\circ t_{q+i} = x^p\circ(x^q\circ t_i)
+\end{align*}
+as desired. We can use this to show that $A$ is an $R$-module by considering arbitrary polynomials $f = \sum_{i=0}^n a_ix^i$ and $g =\sum_{j=0}^m b_jx^j$ in $ \Z[x]$. To prove that $fg\circ T = f\circ g\circ T$ for all $T\in A$ it suffices to consider $T=t_k$ since the action is by definition extended linearly and acts as zero on monomials of higher degree. We have that\begin{align*}
+fg\circ t_k& = \left(\sum_{i=0}^n a_ix^i\right)\left(\sum_{j=0}^m b_jx^j\right)\circ t_k\\
+& = \left(\sum_{i=0}^{n+m} \left(\sum_{j=0}^ia_jb_{i-j}\right)x^i\right)\circ t_k\\
+& = \sum_{i=0}^{n+m} \left(\sum_{j=0}^ia_jb_{i-j}\right)(x^i\circ t_k)&&\text{By $R$-linearity}\\
+& = \sum_{i=0}^{n+m} \left(\sum_{j=0}^ia_jb_{i-j}\right)t_{k+i}&&\text{By definition of the action}\\
+\end{align*}
+Now, we can change the indices in this sum as follows. The various coefficients $a_jb_{j-i}$ are all of the form $a_{i'}b_{j'}$ where $0\le i' \le n$ and $0\le j'\le m$ (there are some additional pairs but for these we have $a_j = 0$ or $b_{j-i} = 0$). The coefficient $a_{i'}b_{j'}$ appears as the coefficient of $t_{k+i'+j'}$. Hence this all simplifies  as \begin{align*}
+fg\circ t_k & = \sum_{i=0}^n\sum_{j=0}^m a_ib_j t_{k+i+j}\\
+& = \sum_{i=0}^n\sum_{j=0}^m a_ib_j x^i \circ (x^j \circ t_{k})\\
+& = \sum_{i=0}^n\sum_{j=0}^m a_ix_i\circ b_j \left( x^j \circ t_{k}\right)\\
+& = \sum_{i=0}^na_ix^i\circ \left( \sum_{j=0}^m b_j  (x^j \circ t_{k})\right)\\
+& = \sum_{i=0}^na_ix^i\circ (g\circ t_k)\\
+& = f\circ(g\circ t_k). 
+\end{align*}
+  This shows that the action obeys axiom 2(b) for modules. We already know it satisfies the other axioms so $A$ is indeed an $R$-module. That the action is unital follows directly from the definition since $1\in R$ acts as identity. Thus $A$ is a unital $R$-module as desired.\\\\
+(b)\\
+This map is naturally a homomorphism of the abelian groups since \[
+\phi(r_1+r_2) = (r_1+r_2)\circ 1_A = r_1\circ 1_A + r_2\circ 1_A = \phi(r_1)+\phi(r_2).
+\]
+Indeed this is an example of the maps $\phi_a$ described in the solution to Problem 10.2.9. It maps $1_R$ to $1_A$ since the module action is unital. 
+
+To see that this is not a ring homomorphism, consider the image of $x^2$. We have that $\phi(x^2) = t_2$. But $\phi(x)\phi(x) = t_1^2 \neq t_2$ so the map is not a ring homomorphism.
 
 \end{solution}\oneperpage
 
