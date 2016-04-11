@@ -867,7 +867,7 @@ em_1 = m = (1-e)m_2.
 But acting on the left and right quantities above by $e$ yields \[
 e^2m_1 = (e-e^2)m_2
 \]
-which simplifies to $em_1 = 0$ since $e-e^2=0$. But this tells us immediately that $m = 0$, so the sum of $eM$ and $(1-e)M = 0$. 
+which simplifies to $em_1 = 0$ since $e-e^2=0$. But this tells us immediately that $m = 0$, so the sum of $eM$ and $(1-e)M$ is direct. 
 \end{solution}\oneperpage
 
 
@@ -875,24 +875,50 @@ which simplifies to $em_1 = 0$ since $e-e^2=0$. But this tells us immediately th
 
 \begin{problem}\label{ex:10.3.16}
 For any ideal $I$ of $R$ let $IM$ be the submodule defined in Exercise 5 of Section 1. Let $A_1,\ldots,A_k$ be any ideals in the ring $R$. Prove that the map \[
-M\to M/A_1M\times\cdots M/A_k M \quad\text{ defined by }\quad m\mapsto (m+A_1M,\ldots,m+A_kM)
+M\to M/A_1M\times\cdots  \times M/A_k M\quad\text{ defined by }\quad m\mapsto (m+A_1M,\ldots,m+A_kM)
 \]
 is an $R$-module homomorphism with kernel $A_1M\cap A_2M\cap \cdots \cap A_kM$.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}Suppose that $m$ is in the kernel of this map. Then $m+A_iM$ is zero for all $A_i$ in the quotient. In particular $m\in A_iM$ for all $i$. Since this condition is necessary and sufficient we conclude that the kernel is indeed $A_1M\cap A_2M\cap\cdots \cap A_kM$. 
 
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.3.17}
-In the notation of the preceding exercise, assume further that the ideals $A_1,\ldots A_k$ are pairwise comaximal (i.e. $A_i+A_j = R$ for al $i\neq j$). Prove that \[
-M/(A_1\cdots A_k)M\cong M/A_1M\times \cdots MA_kM.
+In the notation of the preceding exercise, assume further that the ideals $A_1,\ldots A_k$ are pairwise comaximal (i.e. $A_i+A_j = R$ for all $i\neq j$). Prove that \[
+M/(A_1\cdots A_k)M\cong M/A_1M\times \cdots\times MA_kM.
 \]
 [See the proof of the Chinese Remainder Theorem for rings in Section 7.6.]
 \end{problem}
-\begin{solution}TODO
+\begin{solution} \noindent We will show that $A_1M\cap \cdots \cap A_kM = (A_1\cdots A_k)M$.   First note that $A_1\cdots A_k\subseteq A_i$ for all $i$ since each $A_i$ is an ideal and hence absorbs multiplication by other ideals on both the left and right. This tells us that inclusion in the $\supseteq$ direction holds.
 
+For inclusion in the other direction, we will proceed by induction on $k$. For $k=1$ we have only one ideal and the inclusion is obvious. For the inductive step we assume that $A_2M\cap \cdots \cap A_{k}M = (A_2\cdots A_k)M$. From this we have that $A_1M\cap A_2M\cap\cdots \cap A_kM = A_1M\cap (A_2\cdots A_k)M$. Now notice that $A_1$ and $A_2\cdots A_k$ are comaximal. Indeed, for each $2\le i \le k$ we are guaranteed that there is some $a_i\in A_1$ and $a_i'\in A_i$ so that $1=a_i+a_i'$. We then have that $1=(a_1+a_1')(a_2+a_2')\cdots(a_k+a_k')$ is an element of $A_1+(A_2\cdots A_k)$ since every term in the expanded product is a product of something in $A_1$ with something in $A_2\cdots A_k$. This tells us that $A_1$ and $A_2\cdots A_k$ are comaximal and so we can write $1 = a+a'$ with $a\in A_1$ and $a'\in A_2\cdots A_k$. But this means that $ A_1\cap A_2\cap\cdots \cap A_k \subseteq A_1A_2\cdots A_k $ since for any $b$ in the intersection we have $b = 1b = (a+a')b = ab+a'b = ab+ba'$ which is in $A_1(A_2\cdots A_k)$ since $a\in A_1$, $a'\in A_2\cdots A_k$ and $b$ is in both. (Here we have assumed $R$ is commutative to write $a'b = ba'$, which seems necessary.)
+
+Putting all of this together, we may write \begin{align*}
+A_1M\cap A_2M\cap\cdots \cap A_kM & =  A_1M\cap (A_2\cdots A_k)M\\
+& \subseteq A_1M \cap (A_2\cap A_3\cap\cdots \cap A_k) M &&\text{We are intersecting with the}\\
+&&&\text{ \emph{larger} submodule $(A_2\cdots A_k)M$.}\\
+& \subseteq A_1M\cap A_2M\cap \cdots \cap A_kM&&\text{$(A\cap B)M\subseteq AM\cap BM$ in general.}
+\end{align*}
+This concludes the proof that $A_1M\cap \cdots \cap A_kM = (A_1\cdots A_k)M$.
+
+Now we show that the map defined in the previous problem is surjective. Call this map $\phi$ for convenience. We will proceed by induction on $k$. When $k=2$ we have by the comaximality of $A_1$ and $A_2$ that there are some $a_1\in A_1$ and $a_2\in A_2$ so that $1=a_1+a_2$. To show the map is surjective it suffices to demonstrate a preimage for $(m+A_1,0)$ and $(0,m+A_2)$ for all $m\in M$. For this, notice that \[\phi(a_1m) = (0, a_1m+A_2) = (0,(1-a_2)m+A_2) = (0,m-a_2m + A_2) = (0,m+A_2)\]
+and similarly \[
+\phi(a_2m) = (a_2m+A_1, 0) = ((1-a_1)m+A_1,0) = (m-a_1m+A_1,0) = (m+A_1,0). 
+\]
+Hence the map is surjective in this base case. For the inductive step, the inductive hypothesis tells us that the map is surjective onto all elements of the form $(m_1+A_1,m_2+A_2M,\cdots, a_k+A_kM)$ where all values of $m_2,\ldots, m_k$ are achieved but possibly not all values of $m_1$. To show that the map is surjective it thus suffices to find preimages for $(m_1+A_1,0,\ldots, 0)$ for all possible $m_1$. Recall we showed in earlier in our solution that $A_1$ and $A_2\cdots A_k$ are comaximal. Hence we can write $1 = a+a'$ for $a\in A_1$ and $a'\in A_2\cdots A_k$. Then notice that \begin{align*}
+\phi(a'm_1) &= (a'm_1+A_1M, a'm_1+A_2M,\ldots, a'm_1+A_kM)\\
+& = (m_1-am_1 +A_1M, 0,\ldots,0)&&\text{Since $a'\in A_i$ for all $2\le i \le k$}\\
+& = (m_1+A_1M, 0,\ldots, 0).
+\end{align*}
+Hence the image of $M$ under $\phi$ is all of $M/A_1M\times \cdots \times M/A_kM$. Now, by the first isomorphism theorem for modules we have that \[
+M\ker\phi \cong M/A_1M\times \cdots \times M/A_kM 
+\]
+But $\ker\phi = A_1M\cap \cdots \cap A_kM$, and earlier in the solution we proved that $A_1M\cap\cdots \cap A_kM = (A_1\cdots A_k)M$. We conclude that \[
+M/(A_1\cdots A_k) \cong M/A_1M\times \cdots \times M/A_kM 
+\]
+as desired.
 \end{solution}\oneperpage
 
 
@@ -902,8 +928,28 @@ Let $R$ be a Principal Ideal Domain and let $M$ be an $R$-module that is annihil
 M = M_1\oplus M_2\oplus \cdots \oplus M_k.
 \]
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+ We first claim that the various $M_i$ intersect trivially. This is not too hard to show: if some $m\in M$ is annihilated by $p_i^{\alpha_i}$ then any other element annhilating it must have $p_i$ as a factor (the principal ideal annhilating $m$ is generated by a divisor of $p_i^{\alpha_i}$). So $m$ is \emph{not} annihilated by $p_j$ or any power thereof when $j\neq i$. Hence $m\notin M_j$ for $j\neq i$. This proves that the internal sum of the various $M_i$ is direct. 
 
+It remains to show that the sum of the various $M_i$ is in fact all of $M$. We have from the previous problem that \[
+M\cong M/(a)M \cong M/(p_1^{\alpha_1})M \times M/(p_2^{\alpha_2})M\times\cdots\times M/(p_k^{\alpha_k})M
+\]
+since $(a)M = 0$ and the various ideals $(p_i^{\alpha_i})$ are comaximal by virtue of the various $p_i$ being distinct prime factors. In the previous problem we saw that the isomorphism is given by the natural map \[\phi(m) = (m+p_1^{\alpha_1}M, m+p_2^{\alpha_2}M,\ldots, m+p_k^{\alpha_k}M).\]
+We want to show that this map, when restricted to the direct sum $M_1\oplus\cdots \oplus M_k\subseteq M$ is still surjective. In fact it suffices to show that the inverse of $\phi$ maps into this direct sum. To prove this we need only show that the tuple with $m+(p_i^{\alpha_i})M$ in the $i$-th component and zeroes elsewhere maps into the direct sum of the $M_i$, since the set of all vectors of this form generate the direct product. The image of such a tuple will be some $m'\in M$ which is zero modulo $p_j^{\alpha_j}M$ for all $j\neq i$. In particular, we have that $m' =q_i m''$ for some $m''\in M$, where $q_i = a/p_i^{\alpha_i}$. But then clearly $m'\in M_i$ since \[
+p_i^{\alpha_i} m = p_i^{\alpha_i}q_i m'' = am'' = 0.
+\]
+This proves that $\phi^{-1}$ maps to values in the direct sum of the various $M_i$ and so the direct sum is itself $M$. This concludes the proof.
+
+ 
+  
+
+
+ %We first prove that the various $M_i$ intersect trivially. Let $q_i$ be $a/p_i^{\alpha_i}$ where division means removing $p_i^{\alpha_i}$ from the product, and observe that $M_i \subseteq (q_i)M$. This is clear since $p_i^{\alpha_i}q_i = a$ annihilates all of $M$. 
+ 
+ %We will use the result of the previous problem. We know that \[
+%M = M/(a)M \cong M_1\times M_2\times\cdots \times M_k
+%\]
+%via the map $m\mapsto (m,m,\ldots, m)$ (note that the first equality follows from the fact that $M$ is annihilated by $(a)$).
 \end{solution}\oneperpage
 
 
@@ -911,7 +957,7 @@ M = M_1\oplus M_2\oplus \cdots \oplus M_k.
 \begin{problem}\label{ex:10.3.19}
 Show that if $M$ is a finite abelian group of order $a=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}$ then, considered as a $\Z$-module, $M$ is annihilated by $(a)$, the $p_i$-primary component of $M$ is the unique Sylow $p_i$-subgroup of $M$ and $M$ is isomorphic to the direct product of its Sylow subgroups.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}That $M$ is annihilated by $a$ follows immediately from Lagrange's theorem. We know that Sylow $p_i$-subgroups are unique since $M$ is an abelian group and all Sylow subgroups are conjugates of one another. This leaves that the $p_i$-primary component is indeed a Sylow $p_i$-subgroup. Let $H_i$ be the Sylow $p_i$-subgroup guaranteed by the Sylow theorems. Each element in this group has order dividing $p_i^{\alpha_i}$, since this is the order of $H_i$ and so we see right away that $H_i\subseteq M_i$ where $M_i$ is the annihilator of $p_i^{\alpha_i}$ as described in the previous problem statement. To prove containment in the other direction, suppose $m\in M$ is annihilated by $p_i^{\alpha_i}$. Then its order is a power of $p_i$ and so it must be in $H_i$. Hence the Sylow $p_i$-subgroups are exactly the $p_i$-primary components of $M$ . By the previous problem we conclude that $M$ is the direct sum of its Sylow $p_i$-subgroups.
 
 \end{solution}\oneperpage
 
@@ -923,8 +969,29 @@ Let $I$ be a nonempty index set and for each $i\in I$ let $M_i$ be an $R$-module
 \item[(b)] Show that if $R=\Z$, $I=\Z^+$ and $M_i$ is the cyclic group of order $i$ for each $i$, then the direct sum of the $M_i$'s is not isomorphic to their direct product. [Look at torsion.]
 \end{enumerate}
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+(a)\\
+We know already that the direct product of the $M_i$ will be an abelian group. Thus we only have to verify that the action of $r$ satisfies the module axioms. If $\prod_{i\in I}m_i$ and $\prod_{i\in I}m_i'$ are two elements in $\oplus_{i\in I} M_i$ then we observe that \begin{align*}
+r\left(\prod_{i\in I}m_i+\prod_{i\in I}m_i'\right) &=r\prod_{i\in I}(m_i+m_i')\\
+&=\prod_{i\in I}r(m_i+m_i')\\
+&=\prod_{i\in I}(rm_i+rm_i')\\
+& = \prod_{i\in I}rm_i+\prod_{i\in I}rm_i'\\
+& = r\prod_{i\in I}m_i+r\prod_{i\in I}m_i'.
+\end{align*}
+If $s\in R$ then we can also verify that \[
+(sr)\prod_{i\in I} m_i = \prod_{i\in I}(sr)m_i = \prod_{i\in I}s(rm_i) = s\prod_{i\in I}rm_i = s\left(r\prod_{i\in I}m_i\right)
+\]
+and furthermore\begin{align*}
+(s+r)\prod_{i\in I}m_i &= \prod_{i\in I}(s+r)m_i\\
+& = \prod_{i\in I}(sm_i+rm_i)\\
+& = \prod_{i\in I}sm_i + \prod_{i\in I}rm_i\\
+& = s\prod_{i\in I}m_i + r\prod_{i\in I}m_i.
+\end{align*}
+Finally, if $R$ has unity then we see the direct product is unital since $1\prod_{i\in I}m_i = \prod_{i\in I} 1m_i = \prod_{i\in I} m_i$.
 
+Next we show that the direct sum is a submodule. We know it is a subgroup, and so we only need to check it is invariant under the action of $R$. This is immediate because $r\prod_{i\in I}m_i = \prod_{i\in I}rm_i$ will have no more nonzero terms than $\prod_{i\in I}m_i$, since $r0 = 0$. \\\\
+(b)\\
+We claim that the direct sum is a torsion module but the direct product is not. For any element $\prod_{i\in I}m_i$ we see that it is annihilated by the product of the $i$ for which $m_i\neq 0$. Hence the direct sum is torsion.  Of course we cannot do this when there are infinitely many nonzero $m_i$. In particular the element $\prod_{i\in I} 1$ in the direct product is not annihilated by any nonzero integer since no nonzero integer is congruent to zero mod every other integer. 
 \end{solution}\oneperpage
 
 
