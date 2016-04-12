@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.11)  10 APR 2016 21:54
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.9.11)  11 APR 2016 23:04
 entering extended mode
 **D&F.tex
 ("Z:\Users\Amzi\Documents\3Math Solutions\MathExercises\Dummit & Foote\D&F.tex"
@@ -300,70 +300,109 @@ Underfull \hbox (badness 10000) in paragraph at lines 818--822
  []
 
 [19] [20] [21] [22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 992--996
+Underfull \hbox (badness 10000) in paragraph at lines 994--998
 
  []
 
-[24] [25] [26] [27]
-Overfull \hbox (35.22865pt too wide) in paragraph at lines 1215--1216
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 1009--1012
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1041
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1035--1041
+
+ []
+
+[25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1076--1081
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1082--1085
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1092
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1092
+
+ []
+
+[27] [28] [29]
+Overfull \hbox (35.22865pt too wide) in paragraph at lines 1261--1262
 \OT1/cmr/bx/n/10.95 Exercise 10.4.13. \OT1/cmr/m/n/10.95 Prove that the usual d
 ot prod-uct of vec-tors de-fined by let-ting $(\OML/cmm/m/it/10.95 a[]; [] ; a[
 ]\OT1/cmr/m/n/10.95 ) [] (\OML/cmm/m/it/10.95 b[]; [] ; b[]\OT1/cmr/m/n/10.95 )
 $
  []
 
-[28] [29] [30] [31] [32]
-Overfull \hbox (10.57915pt too wide) in paragraph at lines 1493--1494
+[30] [31] [32] [33] [34]
+Overfull \hbox (10.57915pt too wide) in paragraph at lines 1539--1540
 []\OT1/cmr/m/n/10.95 Deduce that if $\OML/cmm/m/it/10.95 N$ \OT1/cmr/m/n/10.95 
 is a free (re-spec-tive, pro-jec-tive, in-jec-tive, flat) left $\OML/cmm/m/it/1
 0.95 R$\OT1/cmr/m/n/10.95 -module, then $[][](\OML/cmm/m/it/10.95 R; N\OT1/cmr/
 m/n/10.95 )$
  []
 
-[33]
-Overfull \hbox (10.27277pt too wide) in paragraph at lines 1589--1590
+[35] [36]
+Overfull \hbox (10.27277pt too wide) in paragraph at lines 1635--1636
 \OT1/cmr/m/n/10.95 module with the prop-erty that ev-ery short ex-act se-quence
  $[]$
  []
 
-[34] [35] [36]
-Overfull \hbox (0.82402pt too wide) in paragraph at lines 1734--1735
+[37] [38] [39]
+Overfull \hbox (0.82402pt too wide) in paragraph at lines 1780--1781
 []\OT1/cmr/m/n/10.95 If $[]$ and $[]$
  []
 
-) [37] [38]
+) [40]
 ("Z:\Users\Amzi\Documents\3Math Solutions\MathExercises\Dummit & Foote\D&F.aux"
 
 ("Z:\Users\Amzi\Documents\3Math Solutions\MathExercises\Dummit & Foote\chapter1
-0.aux")) ) 
+0.aux"))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  2045 strings out of 493921
  25944 string characters out of 3144879
- 96097 words of memory out of 3000000
+ 95097 words of memory out of 3000000
  5326 multiletter control sequences out of 15000+200000
  13818 words of font info for 52 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  29i,18n,32p,1210b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
-<Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x10.pfb><Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx1
-2.pfb><Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.
-pfb><Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.p
-fb><Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-><Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><Z
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><Z:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><Z:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><Z:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><Z:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><Z:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><Z:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><Z:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><Z:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><Z:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><Z:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on D&F.pdf (39 pages, 366185 bytes).
+<Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><Z
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><Z:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><Z:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><Z:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><Z:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><Z:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><Z:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><Z:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><Z:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><Z:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><Z:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><Z:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><Z:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><Z:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><Z:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on D&F.pdf (41 pages, 379979 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
+ 203 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
