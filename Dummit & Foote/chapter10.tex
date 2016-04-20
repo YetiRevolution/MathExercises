@@ -1097,7 +1097,39 @@ Furthermore, $s_k = km_k$ for some $m_k\in M$ since each entry is divisible by $
 \begin{problem}\label{ex:10.3.25}
 In the construction of direct limits, Exercise 8 of Section 7.6, show that if all $A_i$ are $R$-modules and the maps $\rho_{ij}$ are $R$-module homomorphisms, then the direct limit $A=\varinjlim A_i$ may be given the structure of an $R$-module in a natural way such that the maps $\rho_i:A_i\to A$ are all $R$-module homomorphisms. Verify the corresponding universal property (part (e)) for $R$-module homomorphism $\phi_i:A_i\to C$ commuting with the $\rho_{ij}$. 
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+We know from the construction that $A$ is an abelian group, and so we need only show that there is an action of $R$ on $A$ that makes it an $R$-module, and that the various $\rho_i$ are $R$-module homomorphisms. If $[a]\in A$ is some equivalence class of elements in the various $A_i$ and $r\in R$ then we will define the action by $r[a] = [ra]$. First we show this is well defined. If $[a_i] = [a_j]$ then we know there is some $k$ so that $\rho_{ik}(a_i) = \rho_{jk}(a_j)$. Since $\rho_{ik}$ and $\rho_{jk}$ are $R$-module homomorphisms we have that  \[\rho_{ik}(ra_i) = r\rho_{ik}(a_i) = r\rho_{jk}(a_j) = \rho_{jk}\]
+which proves that $[ra_i] = [ra_j]$. Hence the action is well defined. Since we may choose arbitrary representatives for the equivalence classes it is clear that the action gives $A$ an $R$-module structure, which arises from the action of $R$ on the representatives for the equivalence classes.
+
+Next we show that $\rho_i:A_i\to A$ is an $R$-module homomorphism for all $i$. Recall that $\rho_i(a_i) = [a_i]$. Then we have directly by definition of the action of $R$ on $A$ that \[
+\rho_i(ra_i) = [ra_i] = r[a_i] = r\rho_i(a_i)
+\]
+and so clearly each $\rho_i$ is an $R$-module homomorphism. 
+
+Finally, we must show that the universal property holds. The universal property for the direct limit of modules is as follows: If $C$ is an $R$-module  such that for each $i\in I$ there is an $R$-module homomorphism $\phi_i: A_i\to C$ with $\phi_i = \phi_j\circ \rho_{ij}$ for all $j\le i$, then there is a unique $R$-module homomorphism $\phi:A\to C$ such that $\phi\circ \rho_i = \phi_i$ for all $i$ (where $\rho_i$ is the natural map from $A_i$ to $A$). That is, there exists a unique $\phi$ so that the diagram below commutes for all $i$:\[
+\begin{CD}
+A_i @>\rho_i >> A\\
+@VVV @VV\phi V\\
+@>\phi_i>> C
+\end{CD}
+\]
+(The CD package doesn't allow for diagonal arrows, sorry).
+
+Under the given hypotheses constructing a candidate for $\phi$ is not difficult: For each equivalence class $[a]\in A$, fix some $a_i \in A_i$ so that $\rho_i(a_i) = [a]$. Then define $\phi([a]) = \phi_i(a_i)$. We first argue that this is well defined. Suppose that we choose different representatives for some $[a]$, so that $a_i\in A_i$ and $a_j\in A_j$ had the property $\rho_i(a_i) = [a]$ and $\rho_j(a_j) = [a]$. Since $[a] = [a_i] = [a_j]$ we have that there is some $k$ so that $i\le k$, $j\le k$  and \[
+\rho_{ik}(a_i) = \rho_{jk}(a_j).
+\]
+Now observe from the hypothesis of the problem that \[
+\phi_i(a_i) =  \phi_k(\rho_{ik}(a_i)) = \phi_k(\rho_{jk}(a_j))  = \phi_j(a_j)
+\]
+and so our definition of $\phi$ is independent of the representatives that we choose for the various equivalence classes $[a]\in A$.
+
+With this it is straightforward to show that $\phi$ is a homomorphism of $R$-modules. The action of $R$ on $A$ is given by $r[a] = [ra]$ and we have argued previously that this action is independent of the choice of representative for $[a]$. Then we have that \[
+\phi(r[a]) = \phi([ra]) = \phi_i(ra_i) = r\phi_i(a_i) = r\phi([a_i]) = r\phi([a])
+\]
+where the representative $a_i$ is in $A_i$. One can also verify easily that this map respects the group structure and is therefore a homomorphism. 
+
+Our final task is to argue uniqueness of $\phi$. To this end suppose we have some $R$-module homomorphism $\psi: A\to C$ so that each $\phi_i$ factors through $\psi$. Furthermore suppose that $\psi$ disagrees with $\phi$ on some $[a_i]$. This means that $\psi([a_i]) \neq \phi_i(a_i)$, but this is a direct contradiction to the fact that we require the diagram described previously to commute for all $i$. Hence the choice of $\phi$ is unique. 
+
 
 \end{solution}\oneperpage
 
@@ -1118,7 +1150,7 @@ Carry out the analysis of the preceding exercise corresponding to the inverse li
 \phi_2(a_1,a_2,a_3,\ldots)&=(a_2,a_4,a_6,\ldots)
 \end{align*}
 \begin{enumerate}
-\item[(a)] Prove that $\{\phi_1,\phi_2\}$ is a free basis of the left $R$-module $R$. [Define the maps $\psi_1$ and $\psi_2$ by $\psi_1(a_1,a_2,\ldots) =(a_1,0,a_2,0,\ldots)$ and $\psi_2(a_1,a_2,\ldots) =(0a_1,0,a_2,\ldots)$. Verify that $\phi_i\psi_i = 1$, $\phi_1\psi_2 = 0 = \phi_2\psi_1$ and $\psi_1\phi+\psi_2\phi_2 = 1$. use these relations to prove that $\psi_2,\phi_2$ are independent and gereate $R$ as a left $R$-module.]
+\item[(a)] Prove that $\{\phi_1,\phi_2\}$ is a free basis of the left $R$-module $R$. [Define the maps $\psi_1$ and $\psi_2$ by $\psi_1(a_1,a_2,\ldots) =(a_1,0,a_2,0,\ldots)$ and $\psi_2(a_1,a_2,\ldots) =(0,a_1,0,a_2,\ldots)$. Verify that $\phi_i\psi_i = 1$, $\phi_1\psi_2 = 0 = \phi_2\psi_1$ and $\psi_1\phi+\psi_2\phi_2 = 1$. use these relations to prove that $\phi_1,\phi_2$ are independent and gereate $R$ as a left $R$-module.]
 \item[(b)] Use $(a)$ to prove that $R\cong R^2$ and deduce that $R\cong R^n$ for all $n\in \Z^+$.
 \end{enumerate}
 \end{problem}

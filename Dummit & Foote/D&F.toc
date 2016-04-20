@@ -1,0 +1,6 @@
+\contentsline {chapter}{\numberline {10}Introduction to Module Theory}{2}{chapter.10}
+\contentsline {section}{\numberline {10.1}Basic Definitions and Examples}{2}{section.10.1}
+\contentsline {section}{\numberline {10.2}Quotient Modules and Module Homomorphisms}{10}{section.10.2}
+\contentsline {section}{\numberline {10.3}Generation of Modules, Direct Sums, and Free Modules}{17}{section.10.3}
+\contentsline {section}{\numberline {10.4}Tensor Products of Modules}{31}{section.10.4}
+\contentsline {section}{\numberline {10.5}Exact Sequences---Projective, Injective, and Flat Modules}{35}{section.10.5}
