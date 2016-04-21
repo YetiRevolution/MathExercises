@@ -1136,13 +1136,31 @@ Our final task is to argue uniqueness of $\phi$. To this end suppose we have som
 
 
 \begin{problem}\label{ex:10.3.26}
-Carry out the analysis of the preceding exercise corresponding to the inverse limits to show that the invese limit of $R$-modules is an $R$-module satisfying the appropriate universal property (cf. Exercise 10 of Section 7.6).
+Carry out the analysis of the preceding exercise corresponding to the inverse limits to show that the inverse limit of $R$-modules is an $R$-module satisfying the appropriate universal property (cf. Exercise 10 of Section 7.6).
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+Let $P$ be the inverse limit of the direct system of $A_i$. We know that $P$ is an abelian group, which is a subgroup of the direct product of all $A_i$.  As a result we need only show that $P$ is invariant under the natural action of $R$ (i.e. the action of $R$ on the direct product). Given some $\prod a_i$ in $P$, the action is given by $r\prod a_i = \prod ra_i$. Notice that this is still in $P$ since for any $i\le j$ we have \[
+\mu_{ji}(ra_i) = r\mu_{ji}(a_i) = ra_j.
+\]
+Thus $P$ is invariant under the action and must be an $R$-module. 
 
+We next prove the desired universal property. The propert is as follows: If $D$ is any $R$-module such that for each $i\in I$ there is an $R$-module homomorphism $\pi_i:D\to A_i$ with $\pi_i = \mu_{ji}\circ \pi_j$ for all $i\le j$, then there is a unique $R$-module homomorphism $\pi:D\to P$ such that $\mu_i\circ \pi = \pi_i$. I.e. there is a unique $\pi:D\to P$ so that the following diagram commutes for all $i$ (recall that $\mu_i$ is the natural projection from $P$ to $A_i$):\[
+\begin{CD}
+D@>\pi >> P\\
+@VVV @VV\mu_i V\\
+@>\pi_i>> A_i
+\end{CD}
+\]
+(The CD package doesn't allow for diagonal arrows, sorry).
 \end{solution}\oneperpage
 
-
+We define a candidate for the map $\pi$ by $\pi(d) = \prod \pi_i(d)$. Notice that this certainly makes the diagram above commute, since \[
+\mu_i(\pi(d)) = \mu_i(\prod \pi_i(d)) = \pi_i(d)
+\]
+for all $i$. It is also a homomorphism of $R$-modules since for any $r\in R$ we have \[
+\pi(rd) = \prod \pi_i(rd) = \prod r\pi_i(d) = r\prod pi_i(d) = r\pi(d)
+\]
+and additivity can be verified quickly as well. For uniqueness consider a homomorphism $\nu :D\to P$ that does not agree with $\pi$ on some $d$. If $\nu(d) = \prod a_i$ then for some $a_i$ we have $a_i\neq \pi_i(d)$. But then the diagram from before clearly does not commute for this $i$. This proves uniqueness.
 
 \begin{problem}\label{ex:10.3.27}
 \emph{(Free modules over noncommutative rings need not have a unique rank)} Let $M$ be the $\Z$-module $\Z\times \Z\times \cdots$ of Exercise 24 and let $R$ be its endomorphism ring, $R = \End_\Z(M)$ (cf. Exercises 29 and 30 in Section 7.1). Define $\phi_1,\phi_2\in R$ by \begin{align*}
@@ -1150,12 +1168,41 @@ Carry out the analysis of the preceding exercise corresponding to the inverse li
 \phi_2(a_1,a_2,a_3,\ldots)&=(a_2,a_4,a_6,\ldots)
 \end{align*}
 \begin{enumerate}
-\item[(a)] Prove that $\{\phi_1,\phi_2\}$ is a free basis of the left $R$-module $R$. [Define the maps $\psi_1$ and $\psi_2$ by $\psi_1(a_1,a_2,\ldots) =(a_1,0,a_2,0,\ldots)$ and $\psi_2(a_1,a_2,\ldots) =(0,a_1,0,a_2,\ldots)$. Verify that $\phi_i\psi_i = 1$, $\phi_1\psi_2 = 0 = \phi_2\psi_1$ and $\psi_1\phi+\psi_2\phi_2 = 1$. use these relations to prove that $\phi_1,\phi_2$ are independent and gereate $R$ as a left $R$-module.]
+\item[(a)] Prove that $\{\phi_1,\phi_2\}$ is a free basis of the left $R$-module $R$. [Define the maps $\psi_1$ and $\psi_2$ by $\psi_1(a_1,a_2,\ldots) =(a_1,0,a_2,0,\ldots)$ and $\psi_2(a_1,a_2,\ldots) =(0,a_1,0,a_2,\ldots)$. Verify that $\phi_i\psi_i = 1$, $\phi_1\psi_2 = 0 = \phi_2\psi_1$ and $\psi_1\phi_1+\psi_2\phi_2 = 1$. use these relations to prove that $\phi_1,\phi_2$ are independent and generate $R$ as a left $R$-module.]
 \item[(b)] Use $(a)$ to prove that $R\cong R^2$ and deduce that $R\cong R^n$ for all $n\in \Z^+$.
 \end{enumerate}
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+(a)\\
+Let $\phi_1, \phi_2, \psi_1$ and $\psi_2$ be as described in the problem statement. Notice that \begin{align*}
+\phi_1(\psi_1(a_1,a_2,a_3,\ldots)) &= \phi_1(a_1,0,a_2,0,\ldots) = (a_1,a_2,a_3,\ldots)
+\end{align*}
+and \begin{align*}
+\phi_2(\psi_2(a_1,a_2,a_3,\ldots)) &= \phi_1(0,a_1,0,a_2,0,\ldots) = (a_1,a_2,a_3,\ldots)
+\end{align*}
+and so $\phi_1\psi_1$ and $\phi_2\psi_2$ are both identity. Via similarly straightforward computations one can show that $\phi_1\psi_2$ and $\phi_2\psi_1$ are both the zero map. We will use these facts to show that $\phi_1$ and $\phi_2$ are $R$-linearly independent. Suppose for contradiction that there were some $\pi_1, \pi_2\in R$ at least one of which is nonzero so that \[
+0 = \pi_1\phi_1 + \pi_2\phi_2.
+\]
+Multiplying on the right by $\psi_1+\psi_2$ we obtain\begin{align*}
+0 &= (\pi_1\phi_1 + \pi_2\phi_2)(\psi_1+\psi_2)\\
+&= \pi_1\phi_1\psi_1 + +\pi_1\phi_1\psi_2 + \pi_2\phi_2\psi_1 + \pi_2\phi_2\psi_2\\
+& = \pi_1 + \pi_2.
+\end{align*}
+On the other hand we may multiply by $\psi_1-\psi_2$ and find that \begin{align*}
+0 &= (\pi_1\phi_1 + \pi_2\phi_2)(\psi_1-\psi_2)\\
+&= \pi_1\phi_1\psi_1 + +\pi_1\phi_1\psi_2 - \pi_2\phi_2\psi_1 - \pi_2\phi_2\psi_2\\
+& = \pi_1 - \pi_2.
+\end{align*}
+Now taking the difference and sum of these two results we have $2\pi_1 = 0$ and $2\pi_2 = 0$. It is clear that composing a map with the doubling map yields the zero map if and only if the original map was zero, and hence $\pi_1 = \pi_2 = 0$. This proves that $\phi_1$ and $\phi_2$ form a free basis for a submodule of $R$. 
 
+To see that the free module generated by $\phi_1$ and $\phi_2$ is all of $R$ we show the final relation: $\psi_1\phi_1+\psi_2\phi_2 = 1$. We can compute directly that \begin{align*}
+(\psi_1\phi_1+\psi_2\phi_2)(a_1,a_2,a_3,\ldots) &= \psi_1(a_1,a_3,a_5,\ldots) + \psi_2(a_2,a_4,a_6,\ldots)\\
+& = (a_1,0,a_3,\ldots) + (0,a_2,0,a_4,\ldots)\\
+& = (a_1,a_2,a_3,a_4,\ldots).
+\end{align*}
+This shows that $\psi_1\phi_1+\psi_2\phi_2 = 1$. Since this is a left $R$-linear combination of $\phi_1$ and $\phi_2$ we conclude that the free module generated by $\phi_1$ and $\phi_2$ contains 1, and is all of $R$.\\\\
+\noindent (b)\\
+In part (a) we showed that $R$ is a free $R$-module over a basis of size 2. In particular, $R\cong R^2$. By induction we naturally have $R\cong R^n$. In fact, I believe that we could choose the maps which pick out the various $n$-th components of vectors in $M$ as a free basis for $R$ of size $n$, if we wanted to be explicit. 
 \end{solution}\oneperpage
 
 
@@ -1173,7 +1220,7 @@ Carry out the analysis of the preceding exercise corresponding to the inverse li
 \begin{section}{Tensor Products of Modules}
 Let $R$ be a ring with 1. 
 \begin{problem}\label{ex:10.4.1}
-Let $f:R\to S$ be a ring homomorphism from the ring $R$ to the ring $S$ with $f(1_R) = 1_S$. Verify the details that $sr = sf(r)$ deefines a right $R$-action on $S$ under which $S$ is an $(S,R)$-bimodule. 
+Let $f:R\to S$ be a ring homomorphism from the ring $R$ to the ring $S$ with $f(1_R) = 1_S$. Verify the details that $sr = sf(r)$ defines a right $R$-action on $S$ under which $S$ is an $(S,R)$-bimodule. 
 \end{problem}
 \begin{solution}TODO
 
