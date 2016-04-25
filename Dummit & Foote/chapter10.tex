@@ -1222,8 +1222,20 @@ Let $R$ be a ring with 1.
 \begin{problem}\label{ex:10.4.1}
 Let $f:R\to S$ be a ring homomorphism from the ring $R$ to the ring $S$ with $f(1_R) = 1_S$. Verify the details that $sr = sf(r)$ defines a right $R$-action on $S$ under which $S$ is an $(S,R)$-bimodule. 
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+We first show that this right action gives $S$ an $R$-module structure. We verify directly that\[
+(s+s')r = (s+s')f(r) = sf(r) + s'f(r) = sr + s'r
+\]
+and \[
+s(r+r') = sf(r+r') = s(f(r)+f(r')) = sf(r) + sf(r') = sr + sr'
+\]
+and \[
+(sr)r' = sf(r)r' = sf(r)f(r') = sf(rr')  = s(rr')
+\]
+which proves that $S$ has the structure of a right $R$-module. We also need to verify that the left action of $S$ is compatible with the right action of $R$. However this is immediate from the associativity of multiplication in $S$:\[
+(s's)r = (s's)f(r) = s'(sf(r)) = s'(sr) .
+\]
+This proves that $S$ has an $(S,R)$-bimodule structure.
 \end{solution}\oneperpage
 
 
@@ -1231,34 +1243,77 @@ Let $f:R\to S$ be a ring homomorphism from the ring $R$ to the ring $S$ with $f(
 \begin{problem}\label{ex:10.4.2}
 Show that the element ``$2\otimes 1$'' is $0$ in $\Z\otimes_\Z \Z/2\Z$ but is nonzero in $2\Z\otimes_\Z \Z/2\Z$. 
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+This arises from the fact that $2$ is ``divisible by two'' in $\Z$ but not $2\Z$. In particular, in $\Z\otimes_\Z \Z/2\Z$ we have that \[
+2\otimes 1  = (1\cdot 2)\otimes 1 = 1\otimes (2\cdot 1) = 1\otimes 2 = 1\otimes 0 = 0.
+\]
+To prove that $2\otimes 1 $ is nonzero in the second tensor product, we consider a group homomorphism $\phi:2\Z\otimes_\Z \Z/2\Z \to \Z/2\Z$ defined by \[
+\phi(2k\otimes x) = kx
+\]
+where $k\in \Z$ and $x\in \Z/2\Z$. To see that this is a group homomorphism it suffices to show that it is bilinear in $k$ and $x$. Let $a,b,k,k'\in \Z$ and $x,x'\in \Z/2\Z$. Then we compute directly that\begin{align*}
+\phi(a(2k) + b(2k'), x) &= \phi(2(ak+bk'),x)\\
+& =(ak+bk')x\\
+& = akx + bk'x\\
+& = a\phi(2k,x) + b\phi(2k',x)
+\end{align*}
+and \begin{align*}
+\phi(2k, ax+bx') & = k(ax+bx')\\
+& = akx + bkx'\\
+& = a\phi(2k,x) + b\phi(2k,x')
+\end{align*}
+and so $\phi$ is linear in each coordinate. We conclude that it is a valid homomorphism. We then notice that $\phi(2\otimes 1) = 1 \neq 0$ and hence $2\otimes 1$ is not in the kernel of $\phi$. This implies that $2\otimes 1$ is nonzero as desired.
 
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.4.3}
-Show that $\C\otimes_\R\C$ and $C\otimes _\C\C$ are both left $\R$-modules but are not isomorphic as $\R$-modules.
+Show that $\C\otimes_\R\C$ and $\C\otimes _\C\C$ are both left $\R$-modules but are not isomorphic as $\R$-modules.
 \end{problem}
-\begin{solution}TODO
+\begin{solution}
+For this problem we use the natural $\R$ module structure obtained by considering $\R$ as a subring of $\C$. First we establish a general result. Let $R$ be an integral domain contained in an integral domain $S$. Then $s\otimes s' \in S\otimes_R S$ is nonzero if and only if $s$ and $s'$ are both nonzero. This can be seen by defining a bilinear map $s\otimes s'\mapsto ss'$ and noticing that $s\otimes s'$ is not in the kernel exactly when $s$ and $s'$ are both nonzero. 
 
+In the chapter we have seen that $R\otimes_R R \cong R$ for any ring $R$, and so clearly $\C\otimes_\C \C$ is a 1-dimensional vector space over $\C$. In particular, it is a 2-dimensional vector space over $\R$. We will show that $\C\otimes_\R\C$ is a 4-dimensional vector space over $\R$, and hence not isomorphic to $\C\otimes_\C\C$. Consider the simple tensors $1\otimes 1, 1\otimes i, i\otimes 1, $ and $i\otimes i$. These span $\C\otimes_\R\C$ since every simple tensor can be written in terms of them \[
+(a+bi)\otimes (c+di) = ac(1\otimes 1) + ad(1\otimes i) + bc(i\otimes 1) + bd(i\otimes i).
+\]
+Then consider the map from $\C\times \C$ to $\R^4$ given by \[
+ (a+bi, c+di) \mapsto (ac,ad,bc,bd).
+\]
+One can verify that this map is $\R$-bilinear, and hence induces an $R$-module homomorphism from $\C\otimes_\R\C$ to $\R^4$. Furthermore this map is clearly surjective (the image of the simple tensors described before yields the natural basis for $\R^4$). The inverse mapping from $\R^4$ can be constructed by sending the standard basis vectors to the simple tensors described before. Since these tensors generate $\C\otimes_\R\C$ we see that the inverse is also surjective. The composition of these maps is clearly the identity in both directions and hence they are isomorphisms. This proves that $\C\otimes_\R\C$ is 4-dimensional over $\R$.
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.4.4}
-Show that $\Q\otimes_\Z\Q$ and $Q\otimes_\Q\Q$ are isomorphic left $\Q$-modules. [Show they are both 1-dimensional vector spaces over $\Q$.]
+Show that $\Q\otimes_\Z\Q$ and $\Q\otimes_\Q\Q$ are isomorphic left $\Q$-modules. [Show they are both 1-dimensional vector spaces over $\Q$.]
 \end{problem}
-\begin{solution}TODO
+\begin{solution}Similar to the previous problem we know that $\Q\otimes_\Q\Q \cong \Q$. In particular, all simple tensors $a\otimes b$ can be written as $1\otimes ab$ and so all tensors are simple and of the form $1\otimes q$ for some $q\in \Q$. In particular $1\otimes 1$ is a basis for $\Q\otimes_\Q\Q$ as a $\Q$-vector space. 
+
+We claim that $1\otimes 1$ is also a basis for $\Q\otimes _\Z \Q$. First we argue that everything in $\Q\otimes_\Z\Q$ can be written as $1\otimes q$ for $q\in \Q$. Given an arbitrary simple tensor $\frac{a}{b}\otimes \frac{c}{d}$ we have that \begin{align*}
+\frac{a}{b}\otimes \frac{c}{d} & = \frac{a}{b}\otimes b\frac{c}{db}\\
+& = \frac{ab}{b}\otimes \frac{c}{db}\\
+& = a\otimes\frac{c}{db}\\
+& = 1\otimes \frac{ac}{db}.
+\end{align*}
+Hence every simple tensor has the form $1\otimes q$ and it follows that every element of $\Q\otimes_\Z\Q$ can be written this way. Next we argue that $1\otimes q$ is nonzero exactly when $q$ is nonzero. To do this we simply define a map $1\otimes q\mapsto q$ from the tensor product to $\Q$. One can verify that this map is $\Z$-linear, and we observe easily that $1\otimes q$ is in the kernel only if $q=0$. Hence the only element of $\Q\otimes_\Z\Q$ that is zero is $1\otimes 0$ and the result follows.
 
 \end{solution}\oneperpage
 
 
 
 \begin{problem}\label{ex:10.4.5}
-Let $A$ be a finite abelian group of order $n$ and let $p^k$ be the largest power of the prime $p$ dividing $n$. Prove that $\Z/p^k\Z\otimes \Z A$ i sisomorphic to the Sylow $p$-subgroup of $A$. 
+Let $A$ be a finite abelian group of order $n$ and let $p^k$ be the largest power of the prime $p$ dividing $n$. Prove that $\Z/p^k\Z\otimes_\Z A$ is isomorphic to the Sylow $p$-subgroup of $A$. 
 \end{problem}
-\begin{solution}TODO
+\begin{solution}Since $A$ is a finite abelian group we may write it as a direct sum of cyclic groups $A \cong C_1\oplus C_2\oplus\cdots \oplus C_n$ where each $C_i$ is a cyclic group of order $a_i$. But then we have by properties of the tensor product that \begin{align*}
+\Z/p^k\Z\otimes_\Z A &\cong \Z/p^k\Z\otimes_\Z \left(\bigoplus_{i=1}^n C_i\right)\\
+& \cong \bigoplus_{i=1}^n (\Z/p^k\Z\otimes_\Z C_i)\\
+& \cong \bigoplus_{i=1}^n (\Z/p^k\Z\otimes_\Z \Z/a_i\Z)
+\end{align*}
+But $\Z/n\Z \otimes_\Z \Z/m\Z$ is isomorphic to $\Z/(m,n)\Z$ and so all terms in the direct sum above for which $a_i$ is not divisible by $p$ vanish. We conclude that \[
+\Z/p^k\Z\otimes_\Z A\cong \bigoplus_{i=1}^n \Z/p^{\alpha_i}\Z
+\]
+where $\alpha_i$ is the largest power of $p$ dividing $a_i$ for all $i$. But this is just the direct sum of the Sylow $p$-subgroup for each $C_i$. It is fairly clear that this is the same as the Sylow $p$-subgroup for $A$ overall. 
+
 
 \end{solution}\oneperpage
 
@@ -1267,8 +1322,15 @@ Let $A$ be a finite abelian group of order $n$ and let $p^k$ be the largest powe
 \begin{problem}\label{ex:10.4.6}
 If $R$ is any integral domain with a quotient field $Q$, prove that $(Q/R)\otimes_R(Q/R) = 0$.
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+We will show that all simple tensors are zero. Let $\frac{a}{b}\otimes \frac{c}{d}$ be an arbitrary element of the tensor product, where $a,b,c,d\in R$. Then we have that \begin{align*}
+\frac{a}{b}\otimes \frac{c}{d} & =\frac{a}{b}\otimes b\frac{c}{db}\\
+& =\frac{ab}{b}\otimes \frac{c}{db}\\
+& =a\otimes \frac{c}{db}\\
+& = 0\otimes \frac{c}{db}\\
+& = 0.
+\end{align*}
+Hence all simple tensors vanish and we are done. 
 \end{solution}\oneperpage
 
 
@@ -1276,8 +1338,16 @@ If $R$ is any integral domain with a quotient field $Q$, prove that $(Q/R)\otime
 \begin{problem}\label{ex:10.4.7}
 If $R$ is any integral domain with quotient field $Q$ and $N$ is a left $R$-module, prove that every element of the tensor product $Q\otimes_R N$ can be written as a simple tensor of the form $(1/d)\otimes n$ for some nonzero $d\in R$ and some $n\in N$. 
 \end{problem}
-\begin{solution}TODO
-
+\begin{solution}
+Note that simple tensors clearly have this form since we can write $\frac{a}{d}\otimes n = \frac{1}{d}\otimes an$. Every element of $Q\otimes_R N$ is a finite sum of simple tensors, which may be written as \[
+\sum_{i=1}^k \frac{1}{d_i}\otimes n_i.
+\]
+Letting $d$ be the product of all $d_i$ and defining $a_i = \prod_{j\neq i} d_i$ we have that \begin{align*}
+\sum_{i=0}^k \frac{1}{d_i}\otimes n_i &= \sum_{i=1}^n \frac{a_i}{d} \otimes n_i\\
+& = \sum_{i=1}^n \frac{1}{d}\otimes a_in_i\\
+& = \frac{1}{d}\otimes\sum_{i=1}^n a_in_i.
+\end{align*}
+This proves the desired result. 
 \end{solution}\oneperpage
 
 
