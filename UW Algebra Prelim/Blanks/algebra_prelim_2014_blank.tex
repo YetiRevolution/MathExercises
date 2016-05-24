@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+
+1. (a) Let $G$ be a group (not necessarily finite) that contains a subgroup of index $n$.
+Show that $G$ contains a normal subgroup $N$ such that $n \le  [G : N] \le  n!$.
+
+(b) Use part (a) to show that there is no simple group of order 36.\\
+
+
+2. Let $p$ be a prime, let $\F_p$ be the $p$-element field, and let $K = F_p(t)$ be the field of rational
+functions in $t$ with coefficients in $\F_p$. Consider the polynomial $f(X) = X^p - t \in K[X]$.
+
+(a) Show that $f$ does not have a root in $K$.
+
+(b) Let $E$ be the splitting field of $f$ over $K$. Find the factorization of $f$ over $E$.
+
+(c) Conclude that $f$ is irreducible over $K$.\\
+
+3. Recall that a ring $A$ is called graded if it admits a direct sum decomposition $A = \bigoplus_{n=0}^\infty A_n$ as abelian groups, with the property that $A_iA_j \subseteq A_{i+j}$
+for all $i, j \ge 0$.
+
+Prove that a graded commutative ring $A = \bigoplus_{n=0}^\infty A_n$ is Noetherian if and only if $A_0$ is
+Noetherian and $A$ is finitely generated as an algebra over $A_0$.\\
+
+4. Let $R$ be a ring with the property that $a^2 = a$ for all $a\in R$.
+
+(a) Compute the Jacobson radical of $R$.
+
+(b) What is the characteristic of $R$?
+
+(c) Prove that $R$ is commutative.
+
+(d) Prove that if $R$ is finite, then $R$ is isomorphic (as a ring) to $\Z/2\Z)^d$ for some $d$.\\
+
+5. Let $R$ be a commutative ring and let $M$ be an $R$-module.
+
+(a) Let $x \in R$ be a nonzero divisor. Compute $\mbox{Tor}_i^R(R/(x), M)$  for $i \ge 0$.
+
+(b) Show that $M$ is a flat $R$-module if and only if $\mbox{Tor}^R_1(M,N) = 0$ for all $R$-modules $N$.
+
+(c) Conclude that if $R$ is a PID and $M$ is a finitely generated $R$-module, then $M$ is
+flat if and only if $M$ is free.\\
+
+6. Let $\overline{\F_p}$ denote the algebraic closure of $\F_p$. Show that the Galois group $\mbox{Gal}(\overline{\F_p}/F_p)$ has
+no nontrivial finite subgroups.\\
+
+7. Let $C_p$ denote the cyclic group of prime order $p$.
+
+(a) Show that $C_p$ has two irreducible representations over $\Q$ (up to isomorphism),
+one of dimension 1 and one of dimension $p- 1$.
+
+(b) Let $G$ be a finite group, and let $\rho : G\to GL_n(\Q)$ be a representation of $G$
+over $\Q$. Let $ρ_\C : G \to GL_n(\C)$ denote $\rho$ followed by the inclusion $GL_n(\Q) to 
+GL_n(\C)$. Thus $\rho_\C$ is a representation of $G$ over $\C$, called the complexification of
+$\rho$. We say that an irreducible representation $\rho$ of $G$ is absolutely irreducible if its
+complexification remains irreducible over $\C.$
+
+Now suppose $G$ is abelian and that every representation of $G$ over $\Q$ is absolutely
+irreducible. Show that $G \cong  (C_2)^k$
+for some $k$ (i.e., is a product of cyclic groups
+of order 2).\\
+
+8. Let $G$ be a finite group and $\Z[G]$ the integral group algebra. Let $\mathcal Z$ be the center of
+$\Z[G]$. For each conjugacy class $C\subset G$, let $P_C = \sum_{g\in C} g$. 
+
+(a) Show that the elements $P_C$ form a $\Z$-basis for $\mathcal Z$. Hence $\mathcal Z\cong \Z^d$ as an abelian
+group, where $d$ is the number of conjugacy classes in $G$.
+
+(b) Show that if a ring $R$ is isomorphic to $\Z^d$ as an abelian group, then every element
+in $R$ satisfies a monic integral polynomial. (\textbf{Hint}: Let $\{v_1, . . . , v_d\}$ be a basis of
+$R$ and for a fixed non-zero $r\in R$, write $rv_i = \sum_j a_{ij} v_j$
+. Use the Hamilton-Cayley
+theorem.)
+
+(c) Let $\pi : G \to GL(V )$ be an irreducible representation of $G$ (over $\C$). Show that
+$\pi(P_C)$ acts on $V$ as multiplication by the scalar\[
+\frac{|C|\chi_\pi(C)}{\dim V},\]
+where $\chi_\pi(C)$  is the value of the character $\chi_\pi$ on any element of $C$.
+
+(d) Conclude that $|C|\chi_\pi(C)/ \dim V$ is an algebraic integer.
+
+
+\end{document}

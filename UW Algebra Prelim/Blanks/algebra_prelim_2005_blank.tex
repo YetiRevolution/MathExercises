@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+1. For any group $G$ we define $\Omega(G)$ to be the image of the group homomorphism
+$\rho : G \to \mbox{Aut}(G)$ where $\rho$ maps $g\in G$ to the conjugation automorphism $x \mapsto gxg^{-1}$.
+Starting with a group $G_0$, we define $G_1 = \Omega(G_0)$ and $G_{i+1} = \Omega(G_i)$ for all $i \ge 1$. If $G_0$
+is of order $p^e$ for a prime $p$ and integer $e \ge 2$, prove that $G_{e−1}$ is the trivial group.\\
+
+2. Let $\F_2$ be the field with 2 elements.
+
+(a) What is the order of $GL_3(\F_2)$?
+
+(b) Use the fact that $GL_3(\F_2)$ is a simple group (which you should not prove) to find the number of elements of order 7 in $GL_3(\F_2)$. \\
+
+
+3. Let $G$ be a finite abelian group. Let $f : \Z^m \to G$ be a surjection of abelian groups.
+We may think of $f$ as a homomorphism of $\Z$-modules. Let $K$ be the kernel of $f$.
+
+(a) Prove that $K$ is isomorphic to $\Z^m$.
+
+(b) We can therefore write an inclusion map $K\to \Z^m$ as $\Z^m\to \Z^m$ and represent it by an $m\times m$ integer matrix $A$. Prove that $|\mbox{det} A| = |G|$. \\
+
+4. Let $R = C([0,1])$ be the ring of all continuous real-valued functions on the closed
+interval $[0,1]$, and for each $c \in [0,1]$, denote by $M_c$ the set of all functions $f\in R$ such
+that $f(c) = 0$.
+
+(a) Prove that $g\in R$ is a unit if and only if $g(c) \neq 0$ for all $c\in [0,1]$. 
+
+(b) Prove that for each $c\in [0,1]$, $M_c$ is a maximal ideal of $R$.
+
+(c) Prove that if $M$ is a maximal ideal of $R$, then $M = M_c$ for some $c\in [0,1]$. (Hint: The compactness of $[0,1]$ may be relevant.) \\
+
+5. Let $R$ and $S$ be commutative rings, and $f : R \to S$ a ring homomorphism.
+
+(a) Show that if $I$ is a prime ideal of $S$, then\[
+f^{-1}(I) = \{r \in R : f(r) \in I\}
+\]
+is a prime ideal of $R$.
+
+(b) Let $N$ be the set of nilpotent elements of $R$:\[
+N = \{r\in R : r^m = 0 \text{ for some } m \ge 1\}.\]
+$N$ is called the \emph{nilradical} of $R$. Prove that it is an ideal which is contained in
+every prime ideal.
+
+(c) Part (a) lets us define a function\begin{align*}
+f^* : \{\text{prime ideals of $S$}\} &\rightarrow \{\text{prime ideals of $R$}\}\\
+I&\mapsto f^{-1}(I)
+\end{align*}
+Let $N$ be the nilradical of $R$. Show that if $S = R/N$ and $f : R \to R/N$ is the
+quotient map, then $f^*$ is a bijection.\\
+
+
+6. Let $F$ be a finite field of characteristic $p$. Let $A$ be an $n\times n$ matrix over $F$. Suppose that $A^p$ is the identity matrix. Show that for every polynomial $f(x)$, the characteristic polynomial of the matrix $f(A)$ is equal to $(t-c)^n$ for some $c$. \\
+
+7. Consider the polynomial $f(x) = x^{10} + x^5 +1 \in\Q[x]$ with splitting field $K$ over $\Q$.
+
+(a) Determine whether $f(x)$ is irreducible over $\Q$ and find $[K:\Q]$. 
+
+(b) Detrmine the structure of the Galois group $\mbox{Gal}(K/\Q)$. \\
+
+8. For each prime number $p$ and each positive integer $n$, how many elements $\alpha$ are there in $\F_{p^n}$ such that $\F_p(\alpha) = \F_{p^6}$? 
+
+
+\end{document}

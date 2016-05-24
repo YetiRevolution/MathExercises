@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+1. Let $GL_2(\C)$ be the general linear group of $2\times 2$ complex matrices, let $H$ be the subgroup
+of $GL_2(\C)$ consisting of non-zero multiples of the identity matrix, and let $PGL_2(\C)$ be
+the quotient group $GL_2(\C)/ H$.
+
+Let $A, B\in PGL_2(\C)$, and assume that both elements have order $n$. Prove that there
+exist $C\in PGL_2(\C)$ and a positive integer $m$ such that\[
+CBC^{-1} = A^m.\]
+
+2. In this problem, as you apply Sylow’s Theorem, state precisely which portions you are
+using.
+
+(a) Prove that there is no simple group of order 30.
+
+(b) Suppose that $G$ is a simple group of order $60$. Determine the number of $p$-Sylow
+subgroups of G for each prime $p$ dividing 60, then prove that $G$ is isomorphic to
+the alternating group $A_5$.
+
+Note: In the second part, you needn’t show that $A_5$ is simple. You need only show
+that if there is a simple group of order 60, then it must be isomorphic to $A_5$.\\
+
+3. Describe the Galois group and the intermediate fields of the cyclotomic extension
+$\Q(\zeta_{12})/\Q$.\\
+
+4. Let \[
+R = \Z[x]/(x^2+x+1).
+\]
+
+(a) Answer the following questions with suitable justification.\\
+i. Is $R$ a Noetherian ring?\\
+ii. Is $R$ an Artinian ring?
+
+(b) Prove that $R$ is an integerally closed domain.\\
+
+
+
+5. Let $R$ be a commutative ring. Recall that an element $r$ of $R$ is nilpotent if $r^n = 0$ 
+for some positive integer $n$ and that the nilradical of $R$ is the set $N(R)$ of nilpotent
+elements.
+
+(a) Prove that
+\[
+N(R) = \bigcap_{P\text{ prime}} P.
+\]
+(Hint: Given a non-nilpotent element $r$ of $R$, you may wish to construct a prime
+ideal that does not contain $r$ or its powers.)
+
+(b) Given a positive integer $m$, determine the nilradical of $\Z/(m)$.
+
+(c) Determine the nilradical of $\C[x, y]/(y^2-x^3)$.
+
+(d) Let $p(x, y)$ be a polynomial in $\C[x, y]$ such that for any complex number $a$,
+ $p(a,a^{3/2}) = 0$.  Prove that $p(x, y)$ is divisible by $y^2-x^3$. \\
+
+6. Given a finite group $G$, recall that its regular representation is the representation on
+the complex group algebra $\C[G]$ induced by left multiplication of $G$ on itself and its
+adjoint representation is the representation on the complex group algebra $\C[G]$ induced
+by conjugation of $G$ on itself.
+
+(a) Let $G = GL_2(\F_2)$. Describe the number and dimensions of the irreducible representations
+of $G$. Then describe the decomposition of its regular representation as
+a direct sum of irreducible representations.
+
+
+(b) Let $H$ be a group of order 12. Show that its adjoint representation is reducible;
+that is, there is an $H$-invariant subspace of $\C[H]$ besides 0 and $\C[H]$.\\
+
+7. Let $M, N$ be finitely generated modules over $\Z$. Recall that $\mbox{Ann}(M)$ is the ideal in $\Z$
+defined as follows:
+\[
+\mbox{ann}(M) = \{a\in \Z \mid am = 0 \text{ for any } m\in M\}
+\]
+Prove that $M \otimes_\Z  N = 0$ if and only if $\mbox{Ann}(M) + \mbox{Ann}(N) = (1)$.\\
+
+8. Let $R$ be a commutative integral domain. Show that the following are equivalent:
+(a) $R$ is a field;
+(b) $R$ is a semi-simple ring;
+(c) Any $R$-module is projective.
+
+
+\end{document}

@@ -1,0 +1,99 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+1. Let $\Q^\times$
+be the nonzero elements of $\Q$, a group under multiplication.
+
+(a) Prove that the additive group of $\Q$ has no maximal proper subgroups.
+
+(b) Is the same statement true for the multiplicative group $\Q^\times$ ?\\
+
+2. Let $V$ be a finite-dimensional vector space over a field $F$ of characteristic 0.
+Let $B : V \times V \to F$ be a non-degenerate, skew-symmetric bilinear form. (In particular, we
+have $B(x, y) = −B(y, x)$ for all $x, y \in V$ .) If $U$ is a subset of $V$ , let\[
+U^\perp = \{v\in V \mid B(u,v) = 0 \text{ for all } u\in U\}.
+\]
+
+(a) Let $U$ be a subspace of $V$ . Prove that $U^\perp$ is a subspace of $V$ and that \[\dim_F(U) + \dim_F(U^\perp) = \dim_F(V).\]
+
+(b) Prove that there exists a subspace $W$ of $V$ such that $W^\perp = W$. \\
+
+3. (a) Suppose that $G$ is a finitely-generated group. Let $n$ be a positive integer. Prove that
+$G$ has only finitely many subgroups of index $n$.
+
+(b) Let $p$ be a prime number. If $G$ is any finitely-generated abelian group, let $t_p(G)$ denote
+the number of subgroups of $G$ of index $p$. Determine the possible values of $t_p(G)$ as $G$ varies
+over all finitely-generated abelian groups.\\
+
+4. Suppose that $G$ is a finite group of order 2013. Prove that $G$ has a normal
+subgroup $N$ of index 3 and that $N$ is a cyclic group. Furthermore, prove that the center of
+$G$ has order divisible by 11. ( You will need the factorization $2013 = 3 \cdot  11 \cdot 61$.)\\
+
+5. Let $V$ be a finite dimensional vector space over $\C$. Let $n = \dim_\C(V )$. Let
+$T : V \to V$ be a linear map. Suppose that the following statement is true.
+
+\emph{For every $c \in\C$, the subspace $\{v\in V\mid T(v) = cv\}$ of $V$ has dimension 0 or 1.}
+
+Prove that there exists a vector $w \in V$ such that $\{w, T(w), ...., T^{n−1}
+(w)\}$ is a linearly
+independent set.\\
+
+
+6. This question concerns an extension $K$ of $\Q$ such that $[K :\Q] = 8$. Assume
+that $K/\Q$ is Galois and let $G = \mbox{Gal}(K/\Q)$. Furthermore, assume that $G$ is nonabelian.
+
+(a) Prove that K has a unique subfield $F$ such that $F/\Q$ is Galois and $[F : \Q] = 4$.
+
+(b) Prove that $F$ has the form $F =\Q(\sqrt{d_1},\sqrt{d_2})$ where $d_1$ and $d_2$ are nonzero integers.
+
+(c) Suppose that $G$ is the quaternionic group. Prove that $d_1$ and $d_2$ are positive integers.\\
+
+
+7. Let $R = \C[x_1, ..., x_n]$ be the polynomial ring over $\C$ in $n$ indeterminates
+$x_1, ..., x_n$. Let $S_n$ be the $n$-th symmetric group. If $\sigma \in S_n$, then we can identify $\sigma $ with the
+automorphism of $R$ defined as follows: $\sigma (c) = c$ for all $c \in\C$, and $\sigma (x_i) = x_{\sigma(i)}$
+for all $i$,
+$1 \le i \le n$. Suppose that $G$ is any subgroup of $S_n$. Let
+ \[S = R^G = \{r\in R\mid \sigma(r) = r \text{ for all } \sigma\in G\}.
+\]
+Prove that $S$ is a finitely-generated $\C$-algebra.\\
+
+
+8. This question concerns the polynomial ring $R = \Z[x, y]$ and the ideal
+$I = (5, x^2 + 2)$ in $R$.
+
+(a) Prove that $I$ is a prime ideal of $R$ and that $R/I$ is a $PID$.
+
+(b) Give an explicit example of a maximal ideal of $R$ which contains $I$.
+(Give a set of generators for such an ideal.)
+
+(c) Show that there are infinitely many distinct maximal ideals in $R$ which contain $I$.
+
+
+
+\end{document}

@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+1. Let $\Z$ be the ring of integers and let $\{0\}$ be the trivial $\Z$-module. Let $G$ be a finitely generated $\Z$-module,
+i.e., a finitely generated Abelian group. Show that if $G\otimes_\Z F = \{0\}$ for all fields $F$, then $G = \{0\}$.\\
+
+2. Let $c$ be an automorphism of order 1 or 2 of a field $F$. Suppose that $c$ has the property that for any finite
+set $\{a_j\}_{j\in J}$ of nonzero elements of $F$, $\sum_{j\in J} a_j c(a_j)$ is nonzero. For any $n \times n$-matrix $A = (a_{ij})$ with entries
+in $F$, let $A^c = (c(a_{ij}))$. The $n\times n$ identity matrix is denoted by $I_n$.
+
+Show that if $A$ has the property that $A(A^c)^T = I_n$, then every eigenvalue $\lambda\in F$ for $A$ satisfies the equation
+$\lambda c(\lambda) = 1.$
+
+(Remark: This result implies the familiar facts that the eigenvalues of an orthogonal matrix over the field
+of real numbers are in the set $\{\pm1\}$ and that the eigenvalues of a unitary matrix over the complex numbers
+have absolute value 1. One takes $c$ to be the identity map in the first case, complex conjugation in the
+second.)\\
+
+3. (a) Let $p<q<r$ be prime integers. Show that a group of order $pqr$ cannot be simple.
+
+(b) Consider groups of orders $2^2\cdot 3\cdot  p$ where $p$ has the values 5,7 and 11. For each of those values of $p$,
+either display a simple group of order $2^2 \cdot 3 \cdot p$, or show that there cannot be a simple group of that order.
+
+4. Let $K/F$ be a finite Galois extension and let $n = [K : F]$. There is a theorem (often referred to as the
+“normal basis theorem”) which states that there exists an irreducible polynomial $f(x) \in F[x]$  whose roots
+form a basis for $K$ as a vector space over $F$. You may assume that theorem in this problem.
+
+(a) Let $G = \mbox{Gal}(K/F)$. The action of $G$ on $K$ makes $K$ into a finite-dimensional representation space for
+$G$ over $F$. Prove that $K$ is isomorphic to the regular representation for $G$ over $F$.
+(The regular representation is defined by letting $G$ act on the group algebra $F[G]$ by multiplication on the
+left.)
+	
+(b) Suppose that the Galois group $G$ is cyclic and that $F$ contains a primitive $n$-th root of unity. Show that
+there exists an injective homomorphism $\chi  : G \to F^\times$.
+
+(c) Show that K contains a nonzero element a with the following property:
+\[g(a) = \chi(g) \cdot a\]
+for all $g\in G$.
+
+(d) If $a$ has the property stated in (c), show that $K = F(a)$ and that $a^n \in F^\times$.\\
+
+5. Let G be the group of matrices of the form $\begin{pmatrix} 1&a&b\\0&a&c\\0&0&1\end{pmatrix}$ with entries in the finite field $\F_p$ of $p$ elements, where $p$ is a prime.
+
+(a) Prove that $G$ is nonabelian.
+
+(b) Suppose that $p$ is odd. Prove that $g^p  = I_3$ for all $g\in G$. 
+
+(c) Suppose that $p=2$. It is known that there are exactly two nonabelian groups of order 8, up to isomorphism: the dihedral group $D_4$ and the quaternionic group. Assuming this fact without proof, determine which of these groups $G$ is isomorphic to. \\
+
+6. Let $R = \Z[x]$, the polynomial ring in a variable $x$ with coefficients in the integers.
+
+(a)  Let $M$ be a maximal ideal of $R$. Show that $R/M$ is a finite field.
+
+
+(b)  Suppose that $k$ is any finite field. Prove that there exists at least one and no more than a finite number
+of maximal ideals $M$ such that $R/M \cong k$.
+
+(c)  Prove that no maximal ideal of $R$ is principal, but that all nonmaximal prime ideals of $R$ are principal.\\
+
+7. There are five nonisomorphic groups of order 8. For each of those groups $G$, find the smallest positive
+integer $n$ such that there is an injective homomorphism $\phi : G \to S_n$.\\
+
+8. Let K be the field $\Q(z)$ of rational functions in a variable $z$ with coeffients in the rational field $Q$. Let $n$
+be a positive integer. Consider the polynomial $x^n - z\in  K[x]$.
+
+(a) Show that the polynomial $x^n-z$ is irreducible over $K$.
+
+(b) Describe the splitting field of $x^n- z$ over $K$.
+
+(c) Determine the Galois group of the splitting field of $x^5 - z$ over the field $K$.
+
+
+\end{document}

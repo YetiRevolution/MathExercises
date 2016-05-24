@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amscd,url,hyperref}
+
+
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\C}{\mathbb{C}}
+
+\DeclareMathOperator{\End}{End}
+
+\begin{document}
+\begin{center}
+\Large 2015 Algebra Prelim\\
+\normalsize September 14, 2015
+\end{center}
+\vspace{1em}
+
+INSTRUCTIONS: Do as many of the eight problems as you can. Four completely
+correct solutions will be a pass; a few complete solutions will count more than many
+partial solutions. Always carefully justify your answers. If you skip a step or omit
+some details in a proof, point out the gap and, if possible, indicate what would be
+required to fill it in\\
+\vspace{1em}
+
+The letters $k$ and $K$ always denote fields.
+
+1. Let $K$ be a field of characteristic zero and $L$ a Galois extension of $K$.
+Let $f$ be an irreducible polynomial in $K[x]$ of degree 7 and suppose $f$
+has no zeroes in $L$. Show that f is irreducible in $L[x]$.\\
+
+2. Let $K$ be a field of characteristic zero and $f \in K[x]$ an irreducible
+polynomial of degree $n$. Let $L$ be a splitting field for $f$. Let $G$ be the
+group of automorphisms of $L$ which act trivially on $K$.
+
+(a) Show that $G$ embeds in the symmetric group $S_n$.
+
+(b) For each $n$, give an example of a field $K$ and polynomial $f$ such
+that $G = S_n$.
+
+(c) What are the possible groups $G$ when $n = 3$? Justify your answer.\\
+
+3. Show there are exactly two groups of order 21 up to isomorphism.\\
+
+4. (a) Show that the ring $\Z[i]$ of Gaussian integers is a unique factorisation
+domain (UFD).
+
+(b) Is $\Z[\sqrt{-5}]$ a UFD? Justify your answer.\\
+
+5. Let $A$ be a domain and $K$ its field of fractions. Recall that we say
+$f \in K$ is \emph{integral over} $A$ if it satisfies an equation\[
+f^n + a_{n-1}f^{n-1} +\cdots + a_1f + a_0 = 0
+\]
+where $a_{n-1},\ldots,a_0\in A$.  The integral closure $\tilde A \subset K$  of $A$ is the set of
+$f\in K$ which are integral over $A$, and we say $A$ is integrally closed if
+$\tilde A = A$.
+
+(a) Show that a UFD is integrally closed. (Hint: write $f$ as a fraction.)
+
+(b) Compute the integral closure of $k[x,y]/(x^2-y^3)$. (Remember that
+a polynomial ring is a UFD and therefore integrally closed.)
+
+(c) Compute the integral closure of $k[x,y,z]/(x^2-y^2z)$. (Hint: there
+is an obvious integral element.)\\
+
+6. Let $V$ be a finite dimensional vector space over $\Q$ and $A: V \to V$ a
+linear map such that $A^7 = \mbox{id}$, the identity map. Suppose that 1 is not
+an eigenvalue of $A$. Prove that $\dim V$ is divisible by 6.\\
+
+7. Let $V$ be a vector space over a field $k$ that is not of characteristic two.
+Let $\omega:V\times V \to k$ be a non-degenerate skew-symmetric bilinear form,
+i.e., $\omega(x, y) = -\omega (y, x)$ for all $x, y \in V$ , and if $x\neq 0$ there is a $y$ such
+that $\omega(x, y) \neq  0$.
+
+(a) Show that there exists a basis $e_1, . . . , e_n, f_1, . . . , f_n$ of $V$ such that $\omega(e_i,e_j) = \omega(f_i,f_j) = 0$ and $\omega(e_i,f_j) = \delta_{ij}$ for all $i,j.$ (In particular, $\dim V = 2n$ is even). 
+
+(b) We say a subspace $W\subset V$ is isotropic if $\omega(w_1,w_2) = 0$ for all $w_1,w_2\in W$. Show that the dimension of an isotropic subspace is
+at $\frac{1}{2}\dim V$.\\
+
+8. Let $\mathbb H$ be the ring of quaternions with standard basis $1, i, j, k$ and identify
+$\C$ with the subring $\R + \R i$ of  $\mathbb H$.
+
+(a) Use the action of $\mathbb H$ on itself by left multiplication to explain why
+there is a ring homomorphism $\phi: \mathbb H \to M_2(\C)$, where $M_2(\C)$
+denotes the ring of $2\times 2$ matrices. (Warning: there are two ways to
+view $\mathbb H$ as a $\C$-vector space, through right and left multiplication
+by elements in the subring $\R + \R i$.)
+
+(b) Say why $\phi$  is injective.
+
+(c) The special unitary group $SU(2)$ consists of all $ 2\times 2$ complex
+matrices $u$ such that $\det(u) = 1$ and $uu^* = u^*u = 1$ where $u^*$
+is the conjugate transpose, i.e., the transpose of the matrix whose
+entries are the complex conjugates of the entries in $u$. Show that $\phi$
+restricts to an isomorphism between the group of unit quaternions
+(those of length one) and $SU(2)$.
+
+(d) Use this to prove that $SU(2)$ acts transitively on the Riemann
+sphere $\mathbb{CP}^1$ defined as the 1-dimensional subspaces in $\C^2$. (Hint:
+use the action of $M_2(\C)$ on $\C^2$  by left multiplication.)
+
+(e) Let $U(1)$ denote the image in $SU(2)$ of the multiplicative subgroup
+of $\C\setminus \{0\}$ consisting of the complex numbers $z\in \C\subset \mathbb H$  of length
+one. Show that the coset space $SU(2)/U(1)$ is isomorphic to the
+2-sphere $S^2$. \\
+
+Remark. The solution to this problem gives a realization of the
+Hopf fibration $S^3\to S^2$ with fibers $S^1$ because the group of unit
+quaternions is isomorphic to the $3$-sphere $S^3$.
+.
+
+
+
+
+
+
+
+\end{document}
