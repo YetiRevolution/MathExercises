@@ -54,16 +54,34 @@ over all finitely-generated abelian groups.\\
 subgroup $N$ of index 3 and that $N$ is a cyclic group. Furthermore, prove that the center of
 $G$ has order divisible by 11. ( You will need the factorization $2013 = 3 \cdot  11 \cdot 61$.)\\
 
+\newpage
 5. Let $V$ be a finite dimensional vector space over $\C$. Let $n = \dim_\C(V )$. Let
 $T : V \to V$ be a linear map. Suppose that the following statement is true.
 
 \emph{For every $c \in\C$, the subspace $\{v\in V\mid T(v) = cv\}$ of $V$ has dimension 0 or 1.}
 
-Prove that there exists a vector $w \in V$ such that $\{w, T(w), ...., T^{n−1}
+Prove that there exists a vector $w \in V$ such that $\{w, T(w), \ldots, T^{n-1}
 (w)\}$ is a linearly
-independent set.\\
+independent set.\\\\\textbf{Solution:}\\
+The condition on $T$ implies that $T$ has $n$ distinct eigenvalues $\lambda_1,\ldots, \lambda_n$ with associated eigenvectors $v_1,\ldots, v_n$ which form a basis for $V$. We claim that choosing $w = v_1+\cdots +v_n$ makes $\{w,T(w),\ldots, T^{n-1}(w)\}$ a linearly independent set. Note that \[
+T^i(w) = \lambda_1^i v_1 + \cdots + \lambda_n^i v_n
+\]
+and so to argue that $\{w,T(w),\ldots, T^{n-1}(w)\}$ is linearly independent it suffices to argue that the matrix \[
+\begin{bmatrix}
+1 & 1 &\cdots & 1\\
+\lambda_1 & \lambda_2 & \cdots & \lambda_n \\
+\lambda_1^2 & \lambda_2^2 &\cdots & \lambda_n^2\\
+\vdots &&\ddots & \vdots \\
+\lambda_1^{n-1} & \lambda_2^{n-1} & \cdots & \lambda_n^{n-1}
+\end{bmatrix}
+\]
+has linearly independent rows, i.e. that it is invertible. 
+This is a Vandermonde matrix, and its determinant is given by \[
+\prod_{1\le i< j \le n} (\lambda_j-\lambda_i).
+\]
+Since $\lambda_j \neq \lambda_i$ when $j\neq i$, we see that this determinant is nonzero and so the matrix is invertible. Hence $\{w,T(w),\ldots, T^{n-1}(w)\}$ forms a linearly independent set. 
 
-
+\newpage
 6. This question concerns an extension $K$ of $\Q$ such that $[K :\Q] = 8$. Assume
 that $K/\Q$ is Galois and let $G = \mbox{Gal}(K/\Q)$. Furthermore, assume that $G$ is nonabelian.
 
@@ -83,7 +101,7 @@ $1 \le i \le n$. Suppose that $G$ is any subgroup of $S_n$. Let
 \]
 Prove that $S$ is a finitely-generated $\C$-algebra.\\
 
-
+\newpage
 8. This question concerns the polynomial ring $R = \Z[x, y]$ and the ideal
 $I = (5, x^2 + 2)$ in $R$.
 
@@ -92,8 +110,20 @@ $I = (5, x^2 + 2)$ in $R$.
 (b) Give an explicit example of a maximal ideal of $R$ which contains $I$.
 (Give a set of generators for such an ideal.)
 
-(c) Show that there are infinitely many distinct maximal ideals in $R$ which contain $I$.
-
+(c) Show that there are infinitely many distinct maximal ideals in $R$ which contain $I$.\\\\
+\textbf{Solution:}\\
+(a)\\
+Note that \[
+R/I = \Z[x,y]/(5,x^2+2) \cong (\Z/5\Z)[x,y]/(x^2+2).
+\]
+The polynomial $x^2+2$ is irreducible over $\Z/5\Z$ (having no roots) and so $\Z/5\Z[x]/(x^2+2)$ is a field. Let $F$ denote this field and observe that \[
+R/I \cong F[y].
+\]
+This is a polynomial ring over a field, and so is a PID. Since $R/I$ is an integral domain we conclude that $I$ must be prime. \\\\
+(b)\\
+The ideal $J = (5,x^2+2, y)$ is maximal since the quotient by this ideal is just $F[y]/(y) \cong F$, a field.\\\\
+(c)\\
+For any prime $p\in\Z$ not equal to 5 let $J_p = (5,x^2+2, py)$. Clearly the various $J_p$ are distinct since the smallest positive integer $n$ for which $ny\in J_p$ is always $p$ and the various $p$ are distinct. Moreover, since $p\neq 5$ for $J_p$ we have $p$ and $5$ relatively prime so that $p$ is invertible mod 5. Thus $(py) = (y)$ as ideals in $F[y]$. We then have that $R/J_p \cong F[y]/(yp) = F[y]/(y) \cong F$, so $R/J_p$ is a field and $J_p$ is maximal. 
 
 
 \end{document}
