@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.30)  13 JUN 2016 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.30)  23 JUN 2016 18:47
 entering extended mode
-**./algebra_prelim_2012_blank.tex
-(algebra_prelim_2012_blank.tex
+**./algebra_prelim_2011.tex
+(algebra_prelim_2011.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("Z:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
@@ -249,8 +249,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(algebra_prelim_2012_blank.aux)
-\openout1 = `algebra_prelim_2012_blank.aux'.
+No file algebra_prelim_2011.aux.
+\openout1 = `algebra_prelim_2011.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -266,7 +266,6 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -314,77 +313,82 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
-
-(algebra_prelim_2012_blank.out) (algebra_prelim_2012_blank.out)
 \@outlinefile=\write3
-\openout3 = `algebra_prelim_2012_blank.out'.
+\openout3 = `algebra_prelim_2011.out'.
 
+LaTeX Font Info:    Try loading font information for U+msa on input line 29.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
 ("Z:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 
 ("Z:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 39--40
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no ™ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 46--48
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--50
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--60
+Underfull \hbox (badness 10000) in paragraph at lines 79--81
 
  []
 
 [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
- [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
+Underfull \hbox (badness 10000) in paragraph at lines 92--94
 
-(algebra_prelim_2012_blank.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
-Package rerunfilecheck Info: File `algebra_prelim_2012_blank.out' has not chang
-ed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
+[2]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
+ (algebra_prelim_2011.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
+
+
+Package rerunfilecheck Warning: File `algebra_prelim_2011.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `algebra_prelim_2011.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
  ) 
 Here is how much of TeX's memory you used:
- 5632 strings out of 493335
- 81495 string characters out of 3136683
- 171770 words of memory out of 3000000
+ 5626 strings out of 493335
+ 81273 string characters out of 3136683
+ 170666 words of memory out of 3000000
  9131 multiletter control sequences out of 15000+200000
  8586 words of font info for 33 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,8n,32p,360b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,32p,217b,322s stack positions out of 5000i,500n,10000p,200000b,50000s
 <Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 <Z:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><Z
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><Z:/P
@@ -392,10 +396,11 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><Z:/Prog
 ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><Z:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><Z:/Program Fil
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><Z:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on algebra_prelim_2012_blank.pdf (2 pages, 88797 bytes).
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><Z:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on algebra_prelim_2011.pdf (2 pages, 98580 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
